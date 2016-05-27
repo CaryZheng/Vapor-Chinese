@@ -7,5 +7,5 @@
    * [安装Swift 3 (Swiftenv)](getting_started/install_swift_3__swiftenv.md)
    * [安装CLI](getting_started/install_cli.md)
 * [指南](guide.md)
-   * Application
+   * [Application](guide/application.md)
 
