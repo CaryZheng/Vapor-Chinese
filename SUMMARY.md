@@ -16,5 +16,5 @@
    * [Coming Soon...](guide/coming_soon.md)
    * [Config](guide/config.md)
 * [高级](advanced.md)
-   * Command Line Arguments
+   * [Command Line Arguments](advanced/command_line_arguments.md)
 
