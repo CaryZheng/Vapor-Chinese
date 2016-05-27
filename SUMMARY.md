@@ -15,5 +15,5 @@
    * [Validation](guide/validation.md)
    * [Coming Soon...](guide/coming_soon.md)
    * [Config](guide/config.md)
-* 高级
+* [高级](advanced.md)
 
