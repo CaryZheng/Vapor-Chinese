@@ -12,5 +12,5 @@
    * [Views](guide/views.md)
    * [Response](guide/response.md)
    * [Request](guide/request.md)
-   * Validation
+   * [Validation](guide/validation.md)
 
