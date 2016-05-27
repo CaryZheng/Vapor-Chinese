@@ -13,5 +13,5 @@
    * [Response](guide/response.md)
    * [Request](guide/request.md)
    * [Validation](guide/validation.md)
-   * Coming Soon...
+   * [Coming Soon...](guide/coming_soon.md)
 
