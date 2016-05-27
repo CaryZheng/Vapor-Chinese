@@ -8,5 +8,5 @@
    * [安装CLI](getting_started/install_cli.md)
 * [指南](guide.md)
    * [Application](guide/application.md)
-   * Routing
+   * [Routing](guide/routing.md)
 
