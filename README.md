@@ -2,4 +2,4 @@
 
 Vapor中文版文档
 
-英文原版地址：[](https://vapor.readme.io/)
+英文原版地址：[传送门](https://vapor.readme.io/)
