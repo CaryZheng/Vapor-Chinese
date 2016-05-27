@@ -14,5 +14,5 @@
    * [Request](guide/request.md)
    * [Validation](guide/validation.md)
    * [Coming Soon...](guide/coming_soon.md)
-   * Config
+   * [Config](guide/config.md)
 
