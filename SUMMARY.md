@@ -9,4 +9,5 @@
 * [指南](guide.md)
    * [Application](guide/application.md)
    * [Routing](guide/routing.md)
+   * Views
 
