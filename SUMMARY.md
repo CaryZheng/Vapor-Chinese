@@ -10,5 +10,5 @@
    * [Application](guide/application.md)
    * [Routing](guide/routing.md)
    * [Views](guide/views.md)
-   * Response
+   * [Response](guide/response.md)
 
