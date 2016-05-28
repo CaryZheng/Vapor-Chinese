@@ -6,6 +6,8 @@
    * [安装Swift 3 (Ubuntu)](getting_started/install_swift_3__ubuntu.md)
    * [安装Swift 3 (Swiftenv)](getting_started/install_swift_3__swiftenv.md)
    * [安装CLI](getting_started/install_cli.md)
+   * [Hello, World](getting_started/hello_world.md)
+   * [Xcode](getting_started/xcode.md)
 * [指南](guide.md)
    * [Application](guide/application.md)
    * [Routing](guide/routing.md)
