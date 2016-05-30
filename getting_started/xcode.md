@@ -18,3 +18,16 @@ vapor xcode
 通过 Xcode > Toolchains ，确保你选择了正确的工具链。
 
 ![](https://raw.githubusercontent.com/CaryZheng/Vapor-Chinese/master/image/xcode_snapshot_1.png)
+
+
+Vapor ```0.9``` 使用 ```05-09 (a)``` 工具链。
+
+
+> 错误的工具链
+> 
+> Apple在不同快照之间存在破坏性的改变。如果你使用错误的工具链，Vapor很有可能会编译不通过。
+
+
+## 编译运行
+---
+从schemes列表中选择App，并且按下 ```Command+R``` 或者点击播放按钮去编译运行你的工程。
