@@ -38,7 +38,7 @@ vapor self compile
 ---
 CLI可以自我更新。当你遇到任何问题的时候这可能会有帮助的。
 
-##### Sehll
+##### Shell
 ```
 vapor self update
 ```
