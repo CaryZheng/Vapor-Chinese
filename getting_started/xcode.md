@@ -46,3 +46,9 @@ Vapor ```0.9``` 使用 ```05-09 (a)``` 工具链。
 
 当 ```App``` 被选中的时候，从scheme列表选择Edit Scheme... 。
 
+![](https://github.com/CaryZheng/Vapor-Chinese/blob/master/image/xcode_snapshot_4.png?raw=true)
+
+
+从那里，你可以控制启动的时候哪些参数被传递进去。
+
+![](https://github.com/CaryZheng/Vapor-Chinese/blob/master/image/xcode_snapshot_5.png?raw=true)
