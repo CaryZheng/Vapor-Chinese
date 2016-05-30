@@ -17,4 +17,4 @@ vapor xcode
 ---
 通过 Xcode > Toolchains ，确保你选择了正确的工具链。
 
-
+![](https://raw.githubusercontent.com/CaryZheng/Vapor-Chinese/master/image/xcode_snapshot_1.png)
