@@ -36,3 +36,13 @@ Vapor ```0.9``` 使用 ```05-09 (a)``` 工具链。
 
 
 如果一切正常，你将在Xcode终端看到如下输出：
+
+![](https://raw.githubusercontent.com/CaryZheng/Vapor-Chinese/133c03a9faace40a98153cd23431856f52931ba2/image/xcode_snapshot_3.png)
+
+
+## 参数
+---
+你可以通过Xcode传递参数到executable，就如同使用命令行。
+
+当 ```App``` 被选中的时候，从scheme列表选择Edit Scheme... 。
+
