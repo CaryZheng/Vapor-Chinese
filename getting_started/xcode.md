@@ -32,4 +32,5 @@ Vapor ```0.9``` 使用 ```05-09 (a)``` 工具链。
 ---
 从schemes列表中选择App，并且按下 ```Command+R``` 或者点击播放按钮去编译运行你的工程。
 
-<img align="center" src="https://github.com/CaryZheng/Vapor-Chinese/blob/master/image/xcode_snapshot_2.png?raw=true">
+| <img align="center" src="https://github.com/CaryZheng/Vapor-Chinese/blob/master/image/xcode_snapshot_2.png?raw=true"> |
+| :--: |
