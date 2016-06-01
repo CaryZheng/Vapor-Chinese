@@ -15,8 +15,8 @@
    * [Response](guide/response.md)
    * [Request](guide/request.md)
    * [Validation](guide/validation.md)
-   * [Coming Soon...](guide/coming_soon.md)
    * [Config](guide/config.md)
+   * [Coming Soon...](guide/coming_soon.md)
 * [高级](advanced.md)
    * [Command Line Arguments](advanced/command_line_arguments.md)
 
