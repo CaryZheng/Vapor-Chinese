@@ -17,13 +17,13 @@ Linux上安装Swift仅需要花费一点的时间，同时支持 14.04 和 15.10
 ##### Shell
 ```
 # Download Swift
-curl -O https://swift.org/builds/development/ubuntu1404/swift-DEVELOPMENT-SNAPSHOT-2016-05-09-a/swift-DEVELOPMENT-SNAPSHOT-2016-05-09-a-ubuntu14.04.tar.gz
+curl -O https://swift.org/builds/development/ubuntu1404/swift-DEVELOPMENT-SNAPSHOT-2016-05-31-a/swift-DEVELOPMENT-SNAPSHOT-2016-05-31-a-ubuntu14.04.tar.gz
 
 # Untar
-tar -zxf swift-DEVELOPMENT-SNAPSHOT-2016-05-09-a-ubuntu14.04.tar.gz
+tar -zxf swift-DEVELOPMENT-SNAPSHOT-2016-05-31-a-ubuntu14.04.tar.gz
 
 # Rename
-mv swift-DEVELOPMENT-SNAPSHOT-2016-05-09-a-ubuntu14.04 swift
+mv swift-DEVELOPMENT-SNAPSHOT-2016-05-31-a-ubuntu14.04 swift
 ```
 
 ## 下载（15.10 - Wily Werewolf）

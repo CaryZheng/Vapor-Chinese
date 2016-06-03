@@ -10,8 +10,8 @@ Swiftenv能让你方便地维护计算机上的多个Swift 3版本。详情请�
 
 ##### <font color="#91A7D3"> Text </font>
 ```
-swiftenv install DEVELOPMENT-SNAPSHOT-2016-05-09-a
-swiftenv global DEVELOPMENT-SNAPSHOT-2016-05-09-a
+swiftenv install DEVELOPMENT-SNAPSHOT-2016-05-31-a
+swiftenv global DEVELOPMENT-SNAPSHOT-2016-05-31-a
 ```
 
 将安装该快照版本，并且设置为默认的Swift 3版本。
