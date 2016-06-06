@@ -47,7 +47,7 @@ Validators ，如 ```Count``` 和 ```Contains``` 可以有许多种配置。例�
 let name: Valid<Count<String>> = try "Vapor".validated(by: Count.max(5))
 ```
 
-这里我们验证 ```String``` 至多5个字符长度。 ```Valid<Count>``` 类型表明字符串已经被验证是一个特定长度，但它不能准确表示 count 是多少。字符串可以被验证小于3个字符或者大于一百万。
+这里我们验证 ```String``` 至多 5 个字符长度。 ```Valid<Count>``` 类型表明字符串已经被验证是一个特定长度，但它不能准确表示 count 是多少。字符串可以被验证小于 3 个字符或者大于一百万。
 
 因此，类型安全方面 ```Validator``` 可能不是一些应用所期望的那样。
 
