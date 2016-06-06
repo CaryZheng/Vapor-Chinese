@@ -52,7 +52,7 @@ sudo apt-get install clang libicu-dev binutils git
 
 ## 安装
 ---
-安装Swift有两种方式。要么添加到你的PATH，要么移动到你bin目录下。
+安装Swift有两种方式。要么添加到你的PATH，要么迁移到你的bin目录下。
 
 ##### Shell
 ```
