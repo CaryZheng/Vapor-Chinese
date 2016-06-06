@@ -4,7 +4,7 @@
 
 ## 初始化
 ---
-you很多方便的 Response 初始化方法。
+有很多方便的 Response 初始化方法。
 
 ## Empty
 ---
@@ -17,7 +17,7 @@ Response(status: .created)
 
 ## Text
 ---
-当在路由闭包中返回 ```String``` 时候 Text responses 被创建，但它们也能被手动创建。
+当在路由闭包中返回 ```String``` 的时候 Text responses 被创建，但它们也能被手动创建。
 
 ##### Swift
 ```
@@ -26,7 +26,7 @@ Response(status: .enhanceYourCalm, text: "Too many requests")
 
 ## JSON
 ---
-当在路由闭包中返回 ```Json()``` 时候 JSON responses 被创建，但它们也能被手动创建。
+当在路由闭包中返回 ```Json()``` 的时候 JSON responses 被创建，但它们也能被手动创建。
 
 ##### Swift
 ```
@@ -37,7 +37,7 @@ Response(status: .internalServerError, text: JSON([
 
 ## Redirect
 ---
-重定向客户端到不同的URL，同时返回301状态码。
+重定向客户端到不同的 URL ，同时返回 301 状态码。
 
 ##### Swift
 ```
