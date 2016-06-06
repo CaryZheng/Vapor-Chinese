@@ -1,10 +1,10 @@
 # Request
 ---
-每个路由闭包可获得一个 ```Request``` 实例。这允许你访问 application 创建的 request ，比如 URI ，输入数据和 session 。
+每个路由闭包可获得一个 ```Request``` 实例。这允许你访问 application 创建的 request ，比如 URI 、输入数据和 session 。
 
 ## Data
 ---
-通过 request 任何发送过来的输入内容，比如 query ， form-encoded 或 JSON-encoded 数据，均可以使用 ```data``` 属性来访问。
+通过 request 任何发送过来的输入内容，比如 query 、 form-encoded 或 JSON-encoded 数据，均可以使用 ```data``` 属性来访问。
 
 ##### Swift
 ```
@@ -32,7 +32,7 @@ guard let age = request.data["age"].int else {
 
 ## Path Indexable
 ---
-通过使用逗号语法嵌套的值可以很容易地被访问到。
+通过使用逗号语法，嵌套的值可以很容易地被访问到。
 
 ##### Swift
 ```
@@ -48,7 +48,7 @@ let firstUserEmail = request.data["users", 0, "email"].string
 
 ## Specific Access
 ---
-如果需要明确访问 query ， form-encoded 或 JSON-encoded data ，你也可以做到
+如果需要明确访问 query 、 form-encoded 或 JSON-encoded data ，你也可以做到
 
 ##### Swift
 ```
@@ -117,7 +117,7 @@ struct URI {
 
 ## Headers
 ---
-```headers``` 属性包含了一个字典，该字典拥有 request 所有的头信息。 key 是不区分大小写的，并且可以包含一个或多个值（根据HTTP规范）。
+```headers``` 属性包含了一个字典，该字典拥有 request 所有的头信息。 key 是不区分大小写的，并且可以包含一个或多个值（根据 HTTP 规范）。
 
 ##### Swift
 ```
