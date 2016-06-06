@@ -1,6 +1,6 @@
 # Routing
 ---
-Vapor中的路由可以被定义在任意文件中，只要能访问到 ```Application``` 即可。通常总是在 ```main.swift``` 文件中。
+Vapor 中的路由可以被定义在任意文件中，只要能访问到 ```Application``` 即可。通常总是在 ```main.swift``` 文件中。
 
 
 ## Basic
@@ -21,7 +21,7 @@ app.get("welcome") { request in
 
 ## Request
 ---
-传递到路由闭包中的第一个参数是 Request 的一个实例。它包含了 method 、 URI ， body 等等。可访问指南的 Request 部分以获取更多内容。
+传递到路由闭包中的第一个参数是 Request 的一个实例。它包含了 method 、 URI 、 body 等等。可访问指南的 Request 部分以获取更多内容。
 
 ##### Swift
 ```
@@ -43,7 +43,7 @@ app.get("version") { request in
 
 ## Response Representable
 ---
-所有的路由闭包都返回 ```ResponseRepresentable``` 数据结构。默认情况下， Strings 和 JSON 都遵循该protocol，但是你可以添加你自己的。
+所有的路由闭包都返回 ```ResponseRepresentable``` 数据结构。默认情况下， Strings 和 JSON 都遵循该 protocol ，但是你可以添加你自己的。
 
 ##### Swift
 ```
@@ -134,7 +134,7 @@ app.grouped(AuthMiddleware(), UserMiddleware()) { group in
 
 ## Caveats
 ---
-类型安全的路由最多支持5个参数。
+类型安全的路由最多支持 5 个参数。
 
 ##### Swift
 
@@ -144,7 +144,7 @@ app.get("users", User, "posts", Post, "comments") { request, user, post in
 }
 ```
 
-如果你使用 ```app.group``` 和 ```app.host``` 的话，超过5个参数是不太可能的。你也可以在固定的路由区域包含斜杠。
+如果你使用 ```app.group``` 和 ```app.host``` 的话，超过 5 个参数是不太可能的。你也可以在固定的路由区域包含斜杠。
 
 ##### Swift 
 
@@ -168,7 +168,7 @@ let String = Swift.String.self
 
 ## Custom Routing 
 ---
-Vapor 仍然支持用户自定义示例或长URLs的传统路由方式。
+Vapor 仍然支持用户自定义示例或长 URLs 的传统路由方式。
 
 ##### Swift
 ```
