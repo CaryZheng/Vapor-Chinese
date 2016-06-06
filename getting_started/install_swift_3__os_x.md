@@ -35,6 +35,8 @@ source ~/.bash_profile
 
 ## 验证
 ---
+检查下是否已安装成功。以下输出内容应该包含 ```3.0-dev``` 。
+
 ##### Shell
 ```
 swift --version
