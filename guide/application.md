@@ -1,11 +1,11 @@
 # Application
 ---
-```Application``` 是提供访问大量Vapor工具的核心类。它负责注册路由，启动服务，添加中间件等等。
+```Application``` 是提供访问大量 Vapor 工具的核心类。它负责注册路由，启动服务，添加中间件等等。
 
 
 ## 初始化
 ---
-正如你所见，创建 ```Application``` 实例唯一需要做的就是导入Vapor。
+正如你所见，创建 ```Application``` 实例唯一需要做的就是导入 Vapor 。
 
 ##### Swift
 ```
@@ -14,7 +14,7 @@ import Vapor
 let app = Application()
 ```
 
-不需要传递任何初始化参数即可创建一个application。这将应用默认配置。
+不需要传递任何初始化参数即可创建一个 application 。这将应用默认配置。
 
 如果想自定义 ```Application``` ，有许多可配置选项。
 
@@ -30,7 +30,7 @@ let app = Application(
 )
 ```
 
-大多数Vapor插件从 ```Provider``` 开始，它们负责配置详情。想要了解更多可阅读下面providers部分。
+大多数 Vapor 插件从 ```Provider``` 开始，它们负责配置详情。想要了解更多可阅读下面 providers 部分。
 
 
 ## Router
@@ -51,9 +51,9 @@ let app = Application(router: CustomRouter())
 
 ## Server
 ---
-server接收来自客户端的连接，比如web浏览器，并且返回应用响应。
+server 接收来自客户端的连接，比如 web 浏览器，并且返回应用响应。
 
-你可以使任意类称为应用的server，只要该类符合 S4 的 ```Server```。想要了解更多关于 S4 和 OpenSwift standards 的内容， 请访问指南的 OpenSwift 区域。
+你可以使任意类成为应用的 server ，只要该类符合 S4 的 ```Server```。想要了解更多关于 S4 和 OpenSwift standards 的内容， 请访问指南的 OpenSwift 区域。
 
 ##### Swift
 ```
@@ -66,7 +66,7 @@ class CustomServer: S4.Server {
 let app = Application(server: CustomServer.self)
 ```
 
-当应用启动的时候，将初始化该server类型。
+当应用启动的时候，将初始化该 server 类型。
 
 
 ## Session
@@ -88,7 +88,7 @@ let session = Session(driver: app.session)
 let port: Int = app.config["app", "port"] ?? 80
 ```
 
-上述代码将尝试从 ```Config/app.json``` 获取 ```port``` 选项。如果找不到，它将使用默认端口号 ```80``` 。更多关于Config的内容请阅读指南的Config部分。
+上述代码将尝试从 ```Config/app.json``` 获取 ```port``` 选项。如果找不到，它将使用默认端口号 ```80``` 。更多关于 Config 的内容请阅读指南的 Config 部分。
 
 
 ## Hash
@@ -100,7 +100,7 @@ let port: Int = app.config["app", "port"] ?? 80
 let hash = app.hash.make("password123")
 ```
 
-将会对提供的字符串创建一个哈希值，与默认的哈希算法不同。更多关于Hash的内容请阅读指南的Hash部分。
+将会对提供的字符串创建一个哈希值，这与默认的哈希算法不同。更多关于 Hash 的内容请阅读指南的 Hash 部分。
 
 
 ## Middleware
