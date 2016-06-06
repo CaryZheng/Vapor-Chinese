@@ -5,7 +5,7 @@
 
 ## Swiftenv
 ---
-Swiftenv能让你方便地维护计算机上的多个Swift 3版本。详情请见[swiftenv](https://github.com/kylef/swiftenv)。
+Swiftenv 能让你方便地维护计算机上的多个Swift 3版本。详情请见[swiftenv](https://github.com/kylef/swiftenv)。
 一旦安装了```swiftenv```，输入如下命令：
 
 ##### <font color="#91A7D3"> Text </font>
