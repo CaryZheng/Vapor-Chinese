@@ -14,7 +14,7 @@ app.viewsDir
 
 ## HTML
 ---
-返回 HTML 或 任何非渲染的文档是简单的。只需要传递文档路径到到 ```View(path: String)``` 。该路径是相对于 ```viewsDir``` 的。
+返回 HTML 或 任何非渲染的文档是简单的。只需要传递文档路径到 ```View(path: String)``` 。该路径是相对于 ```viewsDir``` 的。
 
 ##### Swift
 ```
@@ -29,7 +29,7 @@ app.get("/") { request in
 
 ## Public Resources
 --- 
-Views 需要的任何资源，比如图片，类型和脚本，都应该存放在 application 根目录中的 ```Public``` 文件夹中
+Views 需要的任何资源，比如图片、类型和脚本，都应该存放在 application 根目录中的 ```Public``` 文件夹中
 
 ## View Renderer
 ---
