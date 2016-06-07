@@ -1,14 +1,14 @@
-# Vapor中文版
-Vapor是基于Swift实现的Web框架与服务，可运行于OS X和Ubuntu系统上。
+# Vapor 中文版
+Vapor 是基于 Swift 实现的 Web 框架与服务，可运行于 OS X 和 Ubuntu 系统上。
 
 
 ### 特性
-- 纯Swift实现
+- 纯 Swift 实现
 - 模块化
 - 丰富的表现力
 
 
-### Vapor官网
+### Vapor 官网
 [http://qutheory.io](http://qutheory.io)
 
 
@@ -16,11 +16,11 @@ Vapor是基于Swift实现的Web框架与服务，可运行于OS X和Ubuntu系统
 [https://github.com/qutheory/vapor](https://github.com/qutheory/vapor)
 
 
-### Doc地址
-英文原版Doc地址：[https://vapor.readme.io/](https://vapor.readme.io/)
+### Doc 地址
+英文原版 Doc 地址：[https://vapor.readme.io/](https://vapor.readme.io/)
 
-中文版Doc在线阅读地址：[传送门](https://carymic.gitbooks.io/vapor-chinese/content/)
+中文版 Doc 在线阅读地址：[传送门](https://carymic.gitbooks.io/vapor-chinese/content/)
 
 
 ### Contact
-QQ群(Vapor交流)： 566732724
+QQ群 (Vapor交流)： 566732724
