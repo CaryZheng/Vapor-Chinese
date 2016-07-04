@@ -1,4 +1,4 @@
-# 安装Swift 3 (OS X)
+# 安装Swift 3: macOS
 ---
 安装Vapor，你需要先安装Swift 3。
 
@@ -16,10 +16,10 @@
 
 ```
 # Download
-curl -O https://swift.org/builds/development/xcode/swift-DEVELOPMENT-SNAPSHOT-2016-05-31-a/swift-DEVELOPMENT-SNAPSHOT-2016-05-31-a-osx.pkg
+curl -O https://swift.org/builds/development/xcode/swift-DEVELOPMENT-SNAPSHOT-2016-06-06-a/swift-DEVELOPMENT-SNAPSHOT-2016-06-06-a-osx.pkg
 
 # Install
-open swift-DEVELOPMENT-SNAPSHOT-2016-05-31-a-osx.pkg
+open swift-DEVELOPMENT-SNAPSHOT-2016-06-06-a-osx.pkg
 ```
 
 ## 安装
