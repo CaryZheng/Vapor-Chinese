@@ -1,8 +1,8 @@
-# 安装CLI
+# 安装 CLI
 
-## 安装CLI
+## 安装 CLI
 ---
-Vapor命令行接口对通用任务提供了快捷帮助。让我们来安装它。
+Vapor 命令行接口对通用任务提供了快捷帮助。让我们来安装它。
 
 ##### Shell
 ```
@@ -11,9 +11,9 @@ chmod +x vapor
 sudo mv vapor /usr/local/bin
 ```
 
-> Swift是必需的
+> <font color="#56C0E0"> Swift是必需的 </font>
 > 
-> Vapor CLI是Swift脚本文件，因此你需要先安装Swift 3，并在对应PATH使用它。
+> Vapor CLI 是 Swift 脚本文件，因此你需要先安装 Swift 3，并在对应 PATH 使用它。
 
 
 ## 验证
