@@ -59,3 +59,16 @@ Vapor ```0.11``` 使用 ```06-06 (a)``` 工具链。
 Xcode 会编译运行文件系统临时目录下的可执行文件。如果你执行 ```vapor run serve``` ，将得到非预期的结果。
 
 想要避免它，你应该在 Xcode scheme 中包含如下参数。
+
+![](https://github.com/CaryZheng/Vapor-Chinese/blob/master/image/xcode_snapshot_6.png?raw=true)
+
+
+##### Text
+```
+serve
+--workdir=$(SRCROOT)
+```
+
+第一个参数显示执行 ```serve``` 命令。 如果没有提供， ```serve``` 将默认被执行。但以后这可能会发生变化，具体可参考指南中的命令章节。
+
+第二个参数传递了一个 Xcode 变量作为 Vapor 根目录，这将使得所有的视图和其它静态资源能够被找到和渲染。
