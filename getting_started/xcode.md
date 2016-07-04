@@ -20,7 +20,7 @@ vapor xcode
 ![](https://raw.githubusercontent.com/CaryZheng/Vapor-Chinese/master/image/xcode_snapshot_1.png)
 
 
-Vapor ```0.9``` 使用 ```05-09 (a)``` 工具链。
+Vapor ```0.11``` 使用 ```06-06 (a)``` 工具链。
 
 
 > 错误的工具链
@@ -52,3 +52,10 @@ Vapor ```0.9``` 使用 ```05-09 (a)``` 工具链。
 在那，你可以控制启动的时候哪些参数被传递进去。
 
 ![](https://github.com/CaryZheng/Vapor-Chinese/blob/master/image/xcode_snapshot_5.png?raw=true)
+
+
+## 重要参数
+---
+Xcode 会编译运行文件系统临时目录下的可执行文件。如果你执行 ```vapor run serve``` ，将得到非预期的结果。
+
+想要避免它，你应该在 Xcode scheme 中包含如下参数。
