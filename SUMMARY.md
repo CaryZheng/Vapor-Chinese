@@ -8,6 +8,7 @@
    * [安装CLI](getting_started/install_cli.md)
    * [Hello, World](getting_started/hello_world.md)
    * [Xcode](getting_started/xcode.md)
+   * [Slack](slack.md)
 * [指南](guide.md)
    * [Application](guide/application.md)
    * [Routing](guide/routing.md)
