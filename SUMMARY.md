@@ -10,8 +10,8 @@
 
 ## Install
 
-* [macOS](/macOS.md)
-* [Ubuntu](/install/Ubuntu)
+* [macOS](/Install/macOS.md)
+* [Ubuntu](/Install/Ubuntu)
 
 ## Getting Started
 
