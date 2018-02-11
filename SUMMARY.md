@@ -11,12 +11,10 @@
 ## Install
 
 * [macOS](/Install/macOS.md)
-* [Ubuntu](/Install/Ubuntu)
+* [Ubuntu](Install/Ubuntu.md)
 
 ## Getting Started
 
 * [Hello World](/Getting Started/HelloWorld.md)
-* [Toolbox](/Getting Started/Toolbox)
-
-
+* [Toolbox](/Getting Started/Toolbox.md)
 
