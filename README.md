@@ -4,11 +4,9 @@
 
 
 
-\#\#\# Swift社区
+Swift社区
 
-
-
-SwiftMic：\[www.swiftmic.com\]\(https://www.swiftmic.com\)
+SwiftMic：[https://www.swiftmic.com](https://www.swiftmic.com\)
 
 （致力于打造高品质Swift社区）
 
