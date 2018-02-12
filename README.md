@@ -25,7 +25,7 @@ SwiftMic：[www.swiftmic.com](https://www.swiftmic.com)
 
 Vapor v0.10 中文版 Doc 在线阅读地址：[传送门](https://carymic.gitbooks.io/vapor-chinese/content/)
 
-Vapor3 中文版 Doc 在线阅读地址（翻译计划中）：[传送门](https://carymic.gitbooks.io/vapor3/content/)
+Vapor3 中文版 Doc 在线阅读地址 **（注意：目前处于翻译计划中）** ：[传送门](https://carymic.gitbooks.io/vapor3/content/)
 
 
 ### Contact
