@@ -7,6 +7,10 @@ Vapor 是基于 Swift 实现的 Web 框架与服务，可运行于 OS X 和 Ubun
 - 模块化
 - 丰富的表现力
 
+### Swift社区
+
+SwiftMic：[www.swiftmic.com](https://www.swiftmic.com)
+（致力于打造高品质Swift社区）
 
 ### Vapor 官网
 [http://qutheory.io](http://qutheory.io)
