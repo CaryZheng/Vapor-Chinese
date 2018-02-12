@@ -27,6 +27,6 @@
 
 * [Vapor](/concepts/vapor.md)
 * [Services](/concepts/services.md)
-
-
+* [HTTP](/concepts/http.md)
+* [Code Contributions](/concepts/code_contributions.md)
 
