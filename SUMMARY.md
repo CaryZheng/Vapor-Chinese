@@ -2,11 +2,7 @@
 
 ## Overview
 
-* [My Awesome API](README.md)
-
-## Methods
-
-* [Defining Methods](methods.md)
+* [说明](README.md)
 
 ## Install
 
@@ -17,4 +13,6 @@
 
 * [Hello World](/Getting Started/HelloWorld.md)
 * [Toolbox](/Getting Started/Toolbox.md)
+
+
 
