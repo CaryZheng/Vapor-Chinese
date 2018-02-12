@@ -6,19 +6,19 @@
 
 ## 安装
 
-* [macOS](/Install/macOS.md)
-* [Ubuntu](Install/Ubuntu.md)
+* [macOS](/install/macOS.md)
+* [Ubuntu](/install/ubuntu.md)
 
 ## 开始
 
-* [Hello World](/Getting Started/HelloWorld.md)
-* [Toolbox](/Getting Started/Toolbox.md)
-* [SPM](Getting Started/spm.md)
+* [Hello World](/getting_started/hello_world.md)
+* [Toolbox](/getting_started/toolbox.md)
+* [SPM](/getting_started/spm.md)
 
 ## 概念
 
-* [Vapor](/Concepts/vapor.md)
-* [Services](/Concepts/services.md)
+* [Vapor](/concepts/vapor.md)
+* [Services](/concepts/services.md)
 
 
 
