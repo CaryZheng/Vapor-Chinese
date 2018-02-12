@@ -7,7 +7,7 @@ SwiftMic：[www.swiftmic.com](https://www.swiftmic.com)
 （致力于打造高品质Swift社区）
 
 ### Vapor文档
-英文原版 Doc 地址：[https://docs.vapor.codes/2.0](https://docs.vapor.codes/2.0)
+英文原版 Doc 地址：[https://docs.vapor.codes/2.0](https://docs.vapor.codes/2.0/)
 
 Vapor v0.10 中文版 Doc 在线阅读地址：[传送门](https://carymic.gitbooks.io/vapor-chinese/content/)
 
