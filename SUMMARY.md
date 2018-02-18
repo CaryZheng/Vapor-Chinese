@@ -67,12 +67,12 @@
 ## Databases
 
 * MongoDB
-	* [开始](/fluent/getting_started.md)
-	* [BSON]()
-	* [Basics]()
-	* [Interpreting tutorials]()
+	* [开始](/databases/mongodb/getting_started.md)
+	* [BSON](/databases/mongodb/bson.md)
+	* [Basics](/databases/mongodb/basics.md)
+	* [Interpreting tutorials](/databases/mongodb/interpreting_tutorials.md)
 
 * MySQL
-	* [Getting Started]()
-	* [Basics]()
-	* [Prepared Statements]()
+	* [Getting Started](/databases/mysql/getting_started.md)
+	* [Basics](/databases/mysql/basics.md)
+	* [Prepared Statements](/databases/mysql/prepared_statements.md)
