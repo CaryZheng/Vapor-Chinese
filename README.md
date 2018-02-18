@@ -1,4 +1,4 @@
-# Vapor开发文档（中文版）
+# Vapor开发指南（中文版）
 [Vapor](https://vapor.codes) 是基于 Swift 实现的 Web 框架与服务，可运行于 macOS 和 Ubuntu 系统上。
 
 ### Swift社区
