@@ -90,3 +90,20 @@
 * [Custom commands](/redis/custom_commands.md)
 * [Publish and Subscribe](/redis/publish_and_subscribe.md)
 * [Pipeline](/redis/pipeline.md)
+
+## WebSocket
+
+* [WebSocket](/websocket/websocket.md)
+
+## Services
+
+* [Services](/services/services.md)
+
+## Crypto
+
+* [开始](/crypto/getting_started.md)
+* [Base64](/crypto/base64.md)
+* [Hashes](/crypto/hashes.md)
+* [Message authentication](/crypto/message_authentication.md)
+* [Password hashing](/crypto/password_hashing.md)
+* [Random](/crypto/random.md)
