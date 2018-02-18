@@ -76,3 +76,9 @@
 	* [Getting Started](/databases/mysql/getting_started.md)
 	* [Basics](/databases/mysql/basics.md)
 	* [Prepared Statements](/databases/mysql/prepared_statements.md)
+
+## Leaf
+
+* [开始](/leaf/getting_started.md)
+* [Basics](/leaf/basics.md)
+* [Custom tags](/leaf/custom_tags.md)
