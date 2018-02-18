@@ -51,5 +51,18 @@
 * [Status codes](/http/status_codes.md)
 * [URI](/http/uri.md)
 
+## Fluent
+
+* [开始](/fluent/getting_started.md)
+* [Models](/fluent/models.md)
+* [Migrations](/fluent/migrations.md)
+* [Query Builder](/fluent/query_builder.md)
+* [Schema Builder](/fluent/schema_builder.md)
+* [Migration](/fluent/migration.md)
+* [Relations](/fluent/relations.md)
+* [Pivot](/fluent/pivot.md)
+* [Transaction](/fluent/transaction.md)
+* [Database](/fluent/database.md)
+
 
 
