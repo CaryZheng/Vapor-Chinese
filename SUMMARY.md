@@ -82,3 +82,11 @@
 * [开始](/leaf/getting_started.md)
 * [Basics](/leaf/basics.md)
 * [Custom tags](/leaf/custom_tags.md)
+
+## Redis
+
+* [开始](/redis/getting_started.md)
+* [Basics](/redis/basics.md)
+* [Custom commands](/redis/custom_commands.md)
+* [Publish and Subscribe](/redis/publish_and_subscribe.md)
+* [Pipeline](/redis/pipeline.md)
