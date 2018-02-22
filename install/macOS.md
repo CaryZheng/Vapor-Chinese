@@ -1,2 +1,3 @@
 Coming soon...
 
+![](../image/install_macos_xcode_snapshot.png)
