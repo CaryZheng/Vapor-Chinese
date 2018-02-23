@@ -13,6 +13,9 @@ Vapor v0.10 中文版 Doc 在线阅读地址：[传送门](https://carymic.gitbo
 
 Vapor3 中文版 Doc 在线阅读地址 **（注意：目前处于翻译计划中）**：[传送门](https://carymic.gitbooks.io/vapor3/content/)
 
+### 如何协同翻译
+
+[Vapor3开发指南翻译计划](https://www.swiftmic.com/topic/9/vapor3%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/2)
 
 ### Contact
 QQ群 (Vapor交流)： 566732724
