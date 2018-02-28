@@ -16,7 +16,7 @@ vapor --help
 vapor new --help
 ```
 
-```--help```参数应该成为你学习toolbox的入口，因为它总是最新的。
+--help 参数应该成为你学习toolbox的入口，因为它总是最新的。
 
 ## 新建
 
