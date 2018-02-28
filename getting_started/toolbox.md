@@ -16,7 +16,7 @@ vapor --help
 vapor new --help
 ```
 
---help 参数应该成为你学习toolbox的入口，因为它总是最新的。
+```--help``` 参数应该成为你学习toolbox的入口，因为它总是最新的。
 
 ## 新建
 
@@ -28,7 +28,9 @@ vapor new <name>
 
 只需要填写你的项目名字作为```new```命令的第一个参数即可。
 
-> 注意：项目名字应该是 [PascalCase →](http://wiki.c2.com/?PascalCase) ，比如 ```HelloWorld``` 或者 ```MyProject``` 。
+> 注意：
+> 
+> 项目名字应该是 [PascalCase →](http://wiki.c2.com/?PascalCase) ，比如 ```HelloWorld``` 或者 ```MyProject``` 。
 
 ## 模版
 
