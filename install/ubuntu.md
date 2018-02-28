@@ -85,4 +85,4 @@ Vapor安装好后，就可以创建第一个应用了，可参考 [Getting Start
 
 ## Swift.org
 
-如果查阅 [Swift.org](https://swift.org/)的指南中的[using downloads](https://swift.org/download/#using-downloads)。
+如果你需要Swift 4的详细安装说明，可查阅 [Swift.org](https://swift.org/) 的指南中的 [using downloads](https://swift.org/download/#using-downloads) 。
