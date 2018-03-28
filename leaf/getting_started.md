@@ -59,7 +59,7 @@ let package = Package(
 引入Leaf package 后，你必须通过修改 **configure.swift** 文件来配置Leaf
 
 1. 添加 **import Leaf** 到需要使用的Swift文件的顶部和渲染模板文件中
-2. 添加 **try services.register(LeafProvider())**到 **configure()**方法中，使路由可以渲染需要的Leaf模板
+2. 添加 **try services.register(LeafProvider())** 到 **configure()** 方法中，使路由可以渲染需要的Leaf模板
 
 # 语法高亮
 
