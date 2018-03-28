@@ -24,11 +24,11 @@ router.on(.get, to: "hello", "world") { request in
 
 ## 通过Vapor注册路由
 
-Vapor中我们目前加入了对 .get,.put,.post,.patch 和 .delete 路由的支持
+Vapor中我们目前加入了对 **.get**,**.put**,**.post**,**.patch** 和 **.delete** 路由的支持
 
 如果是可变路径，你也可以在这里使用[parameters](./parameters.md)
 
-Vapor 有一个额外的好处就是，除了直接返回 Response 外还可以返回Future<ResponseRepresentable> 或者 Future<Response>
+Vapor 有一个额外的好处就是，除了直接返回 **Response** 外还可以返回 **Future < ResponseRepresentable >** 或者 **Future < Response >**
 
 ~~~swift
 router.get("components", "in", "path") { request in
