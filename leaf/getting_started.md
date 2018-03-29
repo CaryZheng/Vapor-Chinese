@@ -1,6 +1,6 @@
 # Leaf
 
-**Leaf**是一门模板语言，可以结合 **Futrues**,**Reactive Streams** 和 **Codable**使用。本章会简单介绍如何在在Vapor工程中引用Leaf
+**Leaf**是一门模板语言，可以结合 **Futrues**,**Reactive Streams** 和 **Codable**使用。本章会简单介绍如何在Vapor工程中引用Leaf
 
 # 目录结构示例
 
@@ -71,9 +71,8 @@ let package = Package(
 
 ### Xcode
 
-Xcode目前没有支持语法高亮。然而，使用Xcode的 **HTML Syntax Coloring** 会有一些帮助。 选择一个或多个 Leaf 文件，然后选择**Editor > Syntax Coloring > HTML** .之后你选择的文件就可以使用HTML Syntax Coloring，但是这些帮助是有限的，当你运行工程后，会发现这些关联会被移除
-
-
+Xcode目前没有支持语法高亮。然而，使用Xcode的 **HTML Syntax Coloring** 会有一些帮助。 选择一个或多个 Leaf 文件，然后选择**Editor > Syntax Coloring > HTML** .之后你选择的文件就可以使用HTML Syntax Coloring，但是这些帮助是有限的，当你执行vapor xcode后，会发现这些关联会被移除。
+	
 这里有一种方法可以[永久关联](https://stackoverflow.com/questions/9050035/how-to-make-xcode-recognize-a-custom-file-extension-as-objective-c-for-syntax-hi)，但这可能会花费你一些时间.
 
 ### VS Code

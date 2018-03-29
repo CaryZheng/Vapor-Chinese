@@ -50,6 +50,6 @@ services.register { container -> LeafConfig in
 }
 ~~~
 
-至此，你就可以使用自定义标签 **#customuppercase(some_variable)**了
+至此，你就可以使用自定义标签 **#customuppercase(some_variable)** 了
 
-> 注意：我们并不鼓励使用字母混合数字的方式定义自定义标签，这在Leaf的未来版本中有可能会被禁止使用
+> 注意：我们并不鼓励使用非字母数字的字符定义自定义标签，这在Leaf的未来版本中有可能会被禁止使用
