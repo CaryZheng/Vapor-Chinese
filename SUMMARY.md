@@ -20,6 +20,7 @@
 * [Controllers](/getting_started/controllers.md)
 * [Routing](/getting_started/routing.md)
 * [Content](/getting_started/content.md)
+* [Async](/getting_started/async.md)
 * [Futures](/getting_started/futures.md)
 * [Services](/getting_started/services.md)
 * [Deployment](/getting_started/deployment.md)
@@ -52,6 +53,11 @@
 * [Asymmetric](/crypto/asymmetric.md)
 * [Random](/crypto/random.md)
 
+## Database Kit
+
+* [开始](/database_kit/getting_started.md)
+* [Overview](/database_kit/overview.md)
+
 ## Fluent
 
 * [开始](/fluent/getting_started.md)
@@ -64,6 +70,13 @@
 * [Pivot](/fluent/pivot.md)
 * [Transaction](/fluent/transaction.md)
 * [Database](/fluent/database.md)
+
+## HTTP
+
+* [开始](/http/getting_started.md)
+* [Client](/http/client.md)
+* [Server](/http/server.md)
+* [Message](/http/message.md)
 
 ## Leaf
 
@@ -104,15 +117,18 @@
 ## Routing
 
 * [开始](/routing/getting_started.md)
-* [Parameters](/routing/parameters.md)
-* [Route](/routing/route.md)
-* [Router](/routing/router.md)
+* [Overview](/routing/overview.md)
 
 ## Service
 
 * [开始](/service/getting_started.md)
 * [Services](/service/services.md)
 * [Providers](/service/providers.md)
+
+## SQL
+
+* [开始](/sql/getting_started.md)
+* [Overview](/sql/overview.md)
 
 ## SQLite
 
@@ -141,13 +157,13 @@
 ## Vapor
 
 * [开始](/vapor/getting_started.md)
+* [Client](/vapor/client.md)
 * [Content](/vapor/content.md)
+* [Sessions](/vapor/sessions.md)
+* [WebSocket](/vapor/websocket.md)
 
 ## WebSocket
 
 * [开始](/websocket/getting_started.md)
-
-## Deploy
-
-* [开始](/deploy/getting_started.md)
+* [Overview](/websocket/overview.md)
 
