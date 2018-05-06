@@ -43,7 +43,7 @@ Vapor 的目录结构是基于 [SPM 目录结构](spm.md#目录结构) 构建的
 
 ### Controllers
 
-Controllers 能很好地将应用逻辑进行分组。大多数 controller 有很多方法用来接收 request 并返回对应的 response 。
+Controllers 能很好地将应用逻辑进行分类。大多数 controller 有很多方法用来接收 request 并返回对应的 response 。
 
 > 提示
 > 
@@ -65,7 +65,7 @@ Controllers 能很好地将应用逻辑进行分组。大多数 controller 有�
 
 ### routes.swift
 
-此文件包含主路由集合。你需要在这里配置 controller 对应的路由。
+此文件包含一个方法，该方法用于添加各种路由。
 
 你将会注意到有一个路由示例，正如我们之前所见，它返回了 "hello, world" response。
 
@@ -77,7 +77,7 @@ Controllers 能很好地将应用逻辑进行分组。大多数 controller 有�
 
 ## AppTests
 
-此目录包含了 ```App``` module 的测试用例。想要了解更多，可参考 Testing → Getting Started 。
+此目录包含了 ```App``` module 的测试用例。想要了解更多，可参考 [Testing → Getting Started](../testing/getting_started.md) 。
 
 ## Package.swift
 
