@@ -1,4 +1,4 @@
-# 安装
+# Install on Ubuntu
 
 Ubuntu上安装Vapor只需要花费几分钟时间。
 
@@ -24,7 +24,9 @@ Version | Codename
 eval "$(curl -sL https://apt.vapor.sh)"
 ```
 
-> 提示：该命令需要```curl```，可以通过```sudo apt-get install curl```来安装。
+> 提示
+> 
+> 该命令需要```curl```，可以通过```sudo apt-get install curl```来安装。
 
 ## Dockerfile
 
@@ -65,11 +67,11 @@ swift --version
 将会看到类似如下的输出：
 
 ```
-Apple Swift version 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)
+Apple Swift version 4.1.0 (swiftlang-900.0.69.2 clang-900.0.38)
 Target: x86_64-apple-macosx10.9
 ```
 
-Vapor需要Swift 4。
+Vapor需要Swift 4.1或更高版本。
 
 ### Vapor Toolbox
 
@@ -85,4 +87,4 @@ Vapor安装好后，就可以创建第一个应用了，可参考 [Getting Start
 
 ## Swift.org
 
-如果你需要Swift 4的详细安装说明，可查阅 [Swift.org](https://swift.org/) 的指南中的 [using downloads](https://swift.org/download/#using-downloads) 。
+如果你需要Swift 4.1的详细安装说明，可查阅 [Swift.org](https://swift.org/) 的指南中的 [using downloads](https://swift.org/download/#using-downloads) 。
