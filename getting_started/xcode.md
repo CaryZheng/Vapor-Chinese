@@ -1,6 +1,6 @@
 # Xcode
 
-如果使用 Mac ，你可以通过 Xcode 来开发 Vapor 项目。你可以在Xcode中 编译、运行和停止服务，也可以使用断点和工具来调试代码。
+如果使用 Mac ，你可以通过 Xcode 来开发 Vapor 项目。你可以在Xcode中编译、运行和停止服务，也可以使用断点和工具来调试代码。
 
 ![getting_started_xcode_snapshot_1.png](../image/getting_started_xcode_snapshot_1.png)
 
@@ -24,7 +24,7 @@ vapor xcode
 
 ![getting_started_xcode_snapshot_2.png](../image/getting_started_xcode_snapshot_2.png)
 
-一旦选择好后，只需要点击播放按钮或者使用快捷键 ```Command + R``` 。
+一旦选择好后，只需要点击运行按钮或者使用快捷键 ```Command + R``` 。
 
 ## 测试
 
@@ -32,4 +32,5 @@ vapor xcode
 选择以 ```-Package``` 结尾的 scheme 并使用快捷键 ```Command + U``` 就能运行单元测试。
 
 > 提示
+> 
 > 下拉菜单中可能会出现一些其它的 scheme 选项，忽略它们即可！
