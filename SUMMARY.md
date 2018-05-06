@@ -21,7 +21,6 @@
 * [Routing](/getting_started/routing.md)
 * [Content](/getting_started/content.md)
 * [Async](/getting_started/async.md)
-* [Futures](/getting_started/futures.md)
 * [Services](/getting_started/services.md)
 * [Deployment](/getting_started/deployment.md)
 
