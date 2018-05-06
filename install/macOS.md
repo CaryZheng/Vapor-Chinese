@@ -1,14 +1,16 @@
-想要在 macOS 上使用 Vapor，你只需要安装 Xcode 9 或更高版本。
+# Install on macOS
 
-> 提示：可以通过Xcode来安装Swift，但是之后你可以使用任意喜欢的文本编辑器来开发Vapor应用。
+想要在 macOS 上使用 Vapor，你只需要安装 Xcode 9 或更高版本。
 
 ## 安装Xcode
 
-通过 Mac App Store 安装 [Xcode 9 或更高版本](https://itunes.apple.com/cn/app/xcode/id497799835?mt=12)。
+通过 Mac App Store 安装 [Xcode 9.3 或更高版本](https://itunes.apple.com/cn/app/xcode/id497799835?mt=12)。
 
 ![](../image/install_macos_xcode_snapshot.png)
 
-> 注意：Xcode下载后，你必须打开它来完成安装。这可能需要一段时间。
+> 注意：
+> 
+> Xcode下载后，你必须打开它来完成安装。这可能需要一段时间。
 
 ## 验证安装
 
@@ -21,15 +23,15 @@ swift --version
 你将看到如下类似输出：
 
 ```
-Apple Swift version 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)
+Apple Swift version 4.1.0 (swiftlang-900.0.69.2 clang-900.0.38)
 Target: x86_64-apple-macosx10.9
 ```
 
-Vapor需要Swift 4。
+Vapor需要Swift 4.1或更高版本。
 
 ## 安装Vapor
 
-安装好Swift 4后，我们开始安装 [Vapor Toolbox](../getting_started/toolbox.md)
+安装好Swift 4.1后，我们开始安装 [Vapor Toolbox](../getting_started/toolbox.md)
 
 Toolbox 包含所有Vapor依赖，并可以通过便捷的```CLI```工具来创建新项目。
 
@@ -37,7 +39,9 @@ Toolbox 包含所有Vapor依赖，并可以通过便捷的```CLI```工具来创�
 brew install vapor/tap/vapor
 ```
 
-> 注意：如果还没安装Homebrew的话，请先安装它 [brew.sh →](https://brew.sh/)
+> 提示
+> 
+> 如果还没安装Homebrew的话，请先安装它 [brew.sh →](https://brew.sh/)
 
 ## 验证安装
 
