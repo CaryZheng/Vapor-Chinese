@@ -16,4 +16,4 @@ vapor cloud deploy
 
 ## 其它选择
 
-Vapor 也可以部署在任何支持 Ubuntu 的地方。详情可见 [Deploy → Getting Started](../deploy/getting_started.md)
+Vapor 也可以部署在任何支持 Ubuntu 的地方。
