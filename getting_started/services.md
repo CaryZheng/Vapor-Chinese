@@ -4,7 +4,7 @@ Services 是一个用于 Vapor 的依赖注入（也叫做反向控制）框架�
 
 ## Container
 
-大多数是通过容器来进行服务之间的交互的。一个容器是如下的组合：
+大多数是通过容器来进行服务之间的交互的。一个容器是由以下构成的：
 
 * Services: 一系列已注册的服务
 * Config: 特定服务的配置
@@ -39,7 +39,7 @@ print(view) /// ViewRenderer, might be a LeafRenderer
 
 > 提示
 > 
-> 尽可能的依赖于协议而不是具体类型。这将会更容易进行测试代码（可以很容易的切换具体实现），可以对代码进行解耦。
+> 尽可能的依赖于协议而不是具体类型。这将会更容易测试你的代码（可以很容易的切换具体实现），可以对代码进行解耦。
 
 ## Services
 
@@ -75,7 +75,7 @@ try routes(router)
 services.register(router, as: Router.self)
 ```
 
-因为我们使用 ```as: Router.self``` 注册了 ```router```，所以可以使用具体类型或协议来创建它。
+因为使用了 ```as: Router.self``` 来注册 ```router```，所以我们可以使用具体类型或协议来创建它。
 
 ```
 let router = app.make(Router.self)
@@ -89,7 +89,7 @@ print(router === engineRouter) // true
 
 Environment 用来动态改变 Vapor app 在特定场景下的行为。比如，应用部署后你可能想使用不同的用户名和密码用于数据库。使用 ```Environment``` 就可以很容易地管理起来。
 
-当从命令行运行 Vapor app时，你可以传递 ```--env``` 参数来指定环境。默认情况下当前环境会是```.development```。
+当从命令行运行 Vapor app 时，你可以传递 ```--env``` 参数来指定环境。默认情况下当前环境会是```.development```。
 
 ```
 swift run Run --env prod
