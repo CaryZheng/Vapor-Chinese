@@ -18,12 +18,9 @@ Content-Type: application/json
 }
 ```
 
-## Decode Request
-
 首先，创建一个结构体或类，用来表示你期望的数据。
 
 ```
-import Foundation
 import Vapor
 
 struct LoginRequest: Content {
@@ -35,32 +32,16 @@ struct LoginRequest: Content {
 然后让该结构体或类实现 ```Content``` 。现在我们可以开始解析 HTTP request了。
 
 ```
-router.post("login") { req -> Response in
-    let loginRequest = try req.content.decode(LoginRequest.self)
-
-    print(loginRequest.email) // user@vapor.codes
-    print(loginRequest.password) // don't look!
-
-    return Response(status: .ok)
+router.post("login") { req -> Future<HTTPStatus> in
+    return req.content.decode(LoginRequest.self).map(to: HTTPStatus.self) { loginRequest in
+        print(loginRequest.email) // user@vapor.codes
+        print(loginRequest.password) // don't look!
+        return .ok
+    }
 }
 ```
 
-就是这么简单！
-
-## Other Request Types
-
-因为上面的示例中在 request 中声明了 JSON 类型，所以 Vapor 会自动按 JSON 类型进行解析。同样的方法也适用于下面这个 request 。
-
-```
-POST /login HTTP/1.1
-Content-Type: application/x-www-form-urlencoded
-
-email=user@vapor.codes&don't+look!
-```
-
-> 提示
-> 
-> 你可以配置 Vapor 使用哪个 encoders/decoders 。
+这里我们使用 ```.map(to:)``` 来返回一个 future 。
 
 ## Response
 
@@ -76,12 +57,9 @@ Content-Type: application/json
 }
 ```
 
-### Encode Response
-
 就像 decoding 一样，首先创建一个结构体或类，用来表示你期望的数据。
 
 ```
-import Foundation
 import Vapor
 
 struct User: Content {
@@ -93,37 +71,18 @@ struct User: Content {
 然后只需要让该结构体或类实现 ```Content```。现在我们可以开始 encode 这个 HTTP response了。
 
 ```
-router.get("user") { req -> Response in
-    let user = User(
+router.get("user") { req -> User in
+    return User(
         name: "Vapor User",
         email: "user@vapor.codes"
     )
-
-    let res = Response(status: .ok)
-    try res.content.encode(user, as: .json)
-    return res
 }
 ```
 
-### Other Response Types
+现在你该知道在 Vapor 中如何 encode 和 decode 数据了。
 
-Content 默认将会被自动 encode 成 JSON 类型。你可以通过```as:```参数来重写 content 类型。
+> 提示
+> 
+> 详情可见 [Vapor → Content](../vapor/content.md)
 
-```
-try res.content.encode(user, as: .formURLEncoded)
-```
-
-你也可以更改任意类或结构体默认的 media 类型。
-
-```
-struct User: Content {
-    /// See Content.defaultMediaType
-    static let defaultMediaType: MediaType = .formURLEncoded
-
-    ...
-}
-```
-
-### Configuring Content
-
-Coming soon.
+下一章节是 [Async](async.md) 。
