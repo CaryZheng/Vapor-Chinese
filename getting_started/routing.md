@@ -4,15 +4,13 @@
 
 ## 创建路由器
 
-Vapor中默认路由是 ```EngineRouter```。你可以通过实现```Router```协议来实现自定义路由。
+Vapor中默认路由是 ```EngineRouter```。你可以通过实现```Router```协议来实现自定义路由器。
 
 ```
 let router = try EngineRouter.default()
 ```
 
-有两个API可用，一个是由```Routing```库提供的，另一个是Vapor内置的。
-
-我们推荐使用Vapor内置的API，下面将会继续给予说明。
+通常这些是在 configure.swift 文件中完成的。
 
 ## 注册路由
 
@@ -24,7 +22,7 @@ router.get("users") { req in
 }
 ```
 
-Vapor中路由通常以这些形式存在 ```.get```、```.put```、```.post```、```.patch```和```.delete```。你可以通过```/```来表示路径，也可以使用逗号还分割。我们推荐后者，因为它可读性更好。
+Vapor中路由通常使用 ```.get```、```.put```、```.post```、```.patch```和```.delete```。你可以通过```/```来表示路径，也可以使用逗号还分割。我们推荐后者，因为它可读性更好。
 
 ```
 router.get("path", "to", "something") { ... }
@@ -32,32 +30,31 @@ router.get("path", "to", "something") { ... }
 
 ## 路由
 
-最佳存放路由的位置是 routes.swift 文件。你将会在那找到一个可直接使用的路由器。
+最佳存放路由的位置是 routes.swift 文件，可以使用传进来的路由器参数来注册你的路由。
 
 ```
 import Vapor
 
-final class Routes: RouteCollection {
-    ...
-
-    func boot(router: Router) throws {
-        router.get("hello") { req in
-            return "Hello, world!"
-        }
+public func routes(_ router: Router) throws {
+    // Basic "Hello, world!" example
+    router.get("hello") { req in
+        return "Hello, world!"
     }
+
+    /// ...
 }
 ```
 
-你必须返回一个包含```ResponseEncodable```的 Future。通常```ResponseEncodable```类型是 Content、Response和View。
+如果想了解更多关于返回值的内容，可参考 [Getting Started → Content](content.md) 。
 
 ## 参数
 
 有时候你可能想要路由中某个路径是动态的。这通常是用于要获取一个元素的id，比如```GET /users/:id```。
 
 ```
-router.get("users", Int.parameter) { req -> Future<String> in
+router.get("users", Int.parameter) { req -> String in
     let id = try req.parameter(Int.self)
-    return // fetch the user with id
+    return "requested id #\(id)"
 }
 ```
 
@@ -65,8 +62,8 @@ router.get("users", Int.parameter) { req -> Future<String> in
 
 > 提示
 > 
-> 你也可以使用自定义参数类型。
+> 你也可以自定义参数类型。
 
 ## 注册路由之后
 
-注册完路由后你必须注册这个路由器作为一个服务。
+注册完路由后你必须注册这个路由器作为一个 [Getting Started → Services](services.md)。
