@@ -19,7 +19,11 @@ final class HelloController {
 }
 ```
 
-控制器方法总是会接收 ```Request``` 并且返回 ```ResponseRepresentable``` 类型。这也包含了 futures ，它也遵循 ```ResponseRepresentable```（比如：```Future<String>```）。
+控制器方法总是会接收 ```Request``` 并且返回 ```ResponseRepresentable``` 类型。
+
+> 提示
+> 
+> 期望类型为 ```ResponseEncodable``` 的 ```Futures```（比如：```Future<String>```） 也是 ```ResponseEncodable``` 类型。
 
 关于如何使用控制器，我们只需要简单初始化控制器，然后传递这个方法给路由器即可。
 
@@ -30,24 +34,12 @@ router.get("greet", use: helloController.greet)
 
 ## 使用服务
 
-你可能会想在控制器中访问应用内的服务，很幸运的话这很容易做到。首先，在初始化方法里声明该控制器想要的服务，然后以属性的形式保存它们。
+如果想在控制器中访问 services ，只需要在路由闭包中以 ```Request``` 作为容器来创建 services 即可。 Vapor 将会负责缓存对应的 services。
 
 ```
 final class HelloController {
-    let hasher: BCryptHasher
-
-    init(hasher: BCryptHasher) {
-        self.hasher = hasher
+    func greet(_ req: Request) throws -> String {
+        return try req.make(BCryptHasher.self).hash("hello")
     }
-
-    ...
 }
-```
-
-接下来，当初始化控制器的时候，使用 application 来创建这些服务。
-
-```
-let helloController = try HelloController(
-    hasher: app.make()
-)
 ```
