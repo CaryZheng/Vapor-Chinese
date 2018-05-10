@@ -1,7 +1,6 @@
 # Fluent 的模型
 
-Models are the heart of Fluent. Unlike ORMs in other languages, Fluent doesn't return untyped arrays or dictionaries for queries. Instead, you query the database using models. This allows the Swift compiler to catch many errors that have burdened ORM users for ages.
-模型是Fluent的核心。与其他语言的ORM不同，Fluent不会对返回无类型的数组或字典进行查询。而是使用模型查询数据库。这使得Swift编译器能够捕获许多使ORM用户困扰多年的错误。
+模型是Fluent的核心。与其他语言的ORM不同，Fluent不会对返回无类型的数组或字典进行查询。而是使用模型查询数据库。这使得Swift编译器能够捕获许多让ORM用户困扰多年的错误。
 
 !!! 资料
     本指南提供了一个`模型`协议及其相关方法和属性的概述。如果您刚开始使用，请在[Fluent &rarr; 开始](getting-started.md)中查看数据库指南。
@@ -65,7 +64,7 @@ final class User: Model {
 }
 ```
 
-可以通过向类或类添加泛型类型来创建这种关联类型或结构（即`User <T>`）。这对于您尝试为Fluent创建通用扩展的情况非常有用，例如可能是附加服务提供者。
+可以通过向类或类添加泛型类型来创建这种关联类型或结构（如`User <T>`）。这对于您尝试为Fluent创建通用扩展的情况非常有用，例如可能是附加服务提供者。
 
 ```swift
 final class User<D>: Model where D: Database {
@@ -77,7 +76,7 @@ final class User<D>: Model where D: Database {
 
 您可以向`D`添加更多条件, 例如`QuerySupporting`或者`SchemaSupporting`。您也可以动态扩展和符合您的通用模型来使用`extension User where D: ... { }`。
 
-也就是说，对于大多数情况，您应该尽可能使用具体的类型别名。 Fluent 3旨在让您可以驾驭 通过在您的模型和底层驱动程序之间建立强有力的连接来实现数据库的强大功能。
+也就是说，对于大多数情况，您应该尽可能使用具体的类型别名。 Fluent 3旨在让您通过在您的模型和底层驱动程序之间建立强有力的连接来实现数据库的强大功能。
 
 ### ID 
 
@@ -97,7 +96,7 @@ final class User: Model {
 
 `Model`上有几个可覆盖的属性，可用于自定义Fluent与数据库的交互方式。
 
-### 名称
+### Name 名称
 
 每当Fluent需要时，该 `String`将用作模型的唯一标识符。
 
@@ -109,7 +108,7 @@ final class User: Model {
 }
 ```
 
-默认情况下，这是您的模型的类型名称（小写）。
+默认情况下，这是您的模型小写的类型名称。
 
 ### 实体
 
@@ -123,7 +122,7 @@ final class Goose: Model {
 }
 ```
 
-默认情况下，该属性将被[name](#name)以复数表示. 在言不尽意时，重写此属性非常有用，并且复数形式的单词非常不规则。
+默认情况下，该属性将被[name](#name)以复数形式表示. 在文字不能清楚表达和复数形式的单词不规则的情况下，重写此属性非常有用。
 
 ### ID键
 
