@@ -1,6 +1,5 @@
 # Fluent 的模型
 
-Models are the heart of Fluent. Unlike ORMs in other languages, Fluent doesn't return untyped arrays or dictionaries for queries. Instead, you query the database using models. This allows the Swift compiler to catch many errors that have burdened ORM users for ages.
 模型是Fluent的核心。与其他语言的ORM不同，Fluent不会对返回无类型的数组或字典进行查询。而是使用模型查询数据库。这使得Swift编译器能够捕获许多使ORM用户困扰多年的错误。
 
 !!! 资料
