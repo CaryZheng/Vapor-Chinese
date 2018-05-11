@@ -1,19 +1,17 @@
 # Getting Started with Migrations
 
-Migrations are a way of making organized, testable, and reliable changes to your database's structure--
-even while it's in production!
+Migrations 对数据库结构进行有组织，可测试和可靠变更的一种方式 - 即使在生产中！
 
-Migrations are often used for preparing a database schema for your models. However, they can also be used to 
-make normal queries to your database.
+Migrations 通常用于为Model准备database schema。但是，它们也可以用于对数据库进行常规查询。
 
-In this guide we will cover creating both types of migrations.
+在本指南中，我们将介绍创建两种类型的migrations。 
 
 ## Model Schema
 
-Let's take a look at how we can prepare a schema supporting database to accept the 
-`User` model from the [previous section](models.md).
+让我们来看看我们如何准备一个支持数据库的Schema来接受 
+`User`（上一节中[previous section](models.md)的Model）。
 
-Just like we did with the `Model` protocol, we will conform our `User` to `Migration`.
+就像我们使用`Model`协议一样，我们会将我们的`User`符合'Migration'。
 
 ```swift
 import Fluent
@@ -23,15 +21,13 @@ extension User: Migration {
 }
 ```
 
-Swift will inform us that `User` does not yet conform. Let's add the required methods!
+Swift会告诉我们`User`还不符合协议，让我们添加所需的方法！
 
 ### Prepare
 
-The first method to implement is `prepare`. This method is where you make any of your 
-desired changes to the database.
+第一种实施方法是“prepare”。此方法是您可以对数据库进行你想要的修改。
 
-For our `User` model, we simply want to create a table that can store one or more users. To do this,
-we will use the `.create(...)` function on the supplied database connection.
+ 对于我们的`User` model，我们只是想创建一个可以存储一个或多个用户的表。为此，我们将在提供的数据库连接上使用`.create（...）`函数。
 
 ```swift
 extension User: Migration {
@@ -46,30 +42,26 @@ extension User: Migration {
 }
 ```
 
-We pass `self` (shorthand for `User.self` since this is a static method) as the first argument to the `.create` method. This indicates
-to Fluent that we would like to create a schema for the `User` model.
+我们通过`self`（简写为`User.self`，因为这是一个静态方法）作为`.create`方法的第一个参数。这向Fluent表明我们想要为`User`模型创建一个schema。
 
-Next, we pass a closure that accepts a `SchemaBuilder` for our `User` model.
-We can then call `.field`on this builder to describe what fields we'd like our table to have.
+接下来，我们传递一个闭包，它接受一个`SchemaBuilder`作为我们的`User`模型。 然后，我们可以在这个构建器中调用`.field`来描述我们希望我们的表具有哪些字段。
 
-Since we are passing key paths to our `User` model (indicated by `\.`), Fluent can see what type those properties are.
-For most common types (`String`, `Int`, `Double`, etc) Fluent will automatically be able to determine the best
-database field type to use.
+于我们将关键路径传递给我们的'用户'模型（用`\ .`表示），Fluent可以查看这些属性的类型。
+对于大多数常见类型（`String`，`Int`，`Double`等），Fluent将自动确定要使用的最佳数据库字段类型。
 
-You can also choose to manually select which database field type to use for a given field.
+您也可以选择手动选择要用于给定字段的数据库字段类型。
 
 ```swift
 try builder.field(type: .text, for: \.name)
 ```
 
-Learn more about creating, updating, and deleting schemas in [Fluent &rarr; Schema Builder](../schema-builder).
+要了解更多关于创建，更新和删除shemas，请查阅 [Fluent &rarr; Schema Builder](../schema-builder).
 
 ### Revert
 
-Revert is the opposite of prepare. Its job is to undo anything that was done in prepare. It is used when you boot your 
-app with the `--revert` option. 
+Revert 和 prepare相反. 它的工作是撤销在prepare中完成的工作. 当你使用`--revert`选项启动你的应用程序时会激活它的用法。 
 
-To implement `revert` for our model, we simply use `.delete` to indicate that we would like to delete the schema created for `User`.
+要为我们的model实现`revert`，我们只需使用`.delete`来表示我们想要删除为`User`创建的模式。
 
 ```swift
 extension User: Migration {
@@ -80,9 +72,9 @@ extension User: Migration {
 }
 ```
 
-## Example
+## Example 例子
 
-We now have a fully functioning model with migration!
+我们现在有一个完整的migration功能的model！
 
 ```swift
 extension TestUser: Migration {
@@ -102,6 +94,6 @@ extension TestUser: Migration {
 }
 ```
 
-## Done
+## Done 完成
 
-Now that you have a working Fluent model and migration, you can move onto [querying](querying.md) your model. 
+你有一个可行的Fluent的model和migration， 你可以继续学习 [querying](querying.md)你的model. 
