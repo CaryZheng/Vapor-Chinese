@@ -25,7 +25,7 @@ router.get(...) { req in
 !!! 提示
     尽管`.withConnection(to: ...)` 接受数据库_连接_, 我们通常只使用`db`。
 
-闭包期待返回一个`Future<Void>`. 当这个future完成时, 连接将被释放回到Fluent的连接池. 这是常见的返回查询的实现，我们很快就会明白。
+闭包期待返回一个`Future<Void>`. 当这个future完成时, 连接将被释放回到Fluent的连接池. 这是常见的返回查询的实现，我们很快就可以看见。
 
 ### Application
 
@@ -46,7 +46,7 @@ print(res) // Future<T>
 
 ## Create
 
-要创建（保存）模型到数据库，首先初始化模型的一个实例，然后调用`.save(on：)`。
+要创建（保存）Model到数据库，首先初始化Model的一个实例，然后调用`.save(on：)`。
 
 ```swift
 router.post(...) { req in
@@ -96,11 +96,11 @@ router.post(...) { req in
 
 ## Read
 
-要从数据库中读取模型，请在数据库连接上使用`.query()`来创建一个[QueryBuilder](../query-builder)。
+要从数据库中读取Model，请在数据库连接上使用`.query()`来创建一个[QueryBuilder](../query-builder)。
 
 ### All
 
-使用`.all()`从数据库中获取模型的所有实例。
+使用`.all()`从数据库中获取Model的所有实例。
 
 ```swift
 router.get(...) { req in
