@@ -10,7 +10,7 @@ Parameters 作为路由的一部分，你可以从被调用的 route中的 reque
 
 下面这个例子里，我们通过 parameter 生成一个 user 类
 
-我们提醒您，使用过程需要修改唯一标识符
+我们提醒你，使用过程需要修改唯一标识符
 
 ~~~
 class User : Parameter {
