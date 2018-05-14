@@ -5,7 +5,7 @@ Model是Fluent的核心。与其他语言的ORM不同，Fluent不会对返回无
 !!! 资料
     本指南提供了一个`Model`协议及其相关方法和属性的概述。如果您刚开始使用，请在[Fluent &rarr; 开始](getting-started.md)中查看数据库指南。
 
-``是`Fluent`模块中的一个协议. 它扩展了可用于类型擦除的 `AnyModel`协议.
+`Model`是`Fluent`模块中的一个协议. 它扩展了可用于类型擦除的`AnyModel`协议.
 
 ## Conformance
 
@@ -64,7 +64,7 @@ final class User: Model {
 }
 ```
 
-可以通过向类或类添加泛型类型来创建这种关联类型或结构（如`User <T>`）。这对于您尝试为Fluent创建通用扩展的情况非常有用，例如可能是附加服务提供者。
+可以通过向类或结构体添加泛型来创建这种关联类型（如`User <T>`）。这对于您尝试为Fluent创建通用扩展的情况非常有用，例如可能是附加服务提供者。
 
 ```swift
 final class User<D>: Model where D: Database {
@@ -147,7 +147,7 @@ final class User: Model {
 
 `idKey` 属性必须指向具有类型匹配[ID](#id)的可选可写（var）属性。
 
-## 声明周期
+## 生命周期
 
 在`Model`里有几个生命周期的方法,可以通过重写来关联Fluent事件。
 
@@ -179,7 +179,7 @@ final class User: Model {
 
 ## CRUD
 
-Model提供了基本的CRUD方法 (创建[create], 读[read], 更行[update], 删除[delete]).
+Model提供了基本的CRUD方法 (创建[create], 读[read], 更新[update], 删除[delete]).
 
 ### 创建
 
@@ -212,7 +212,7 @@ print(users) /// Future<[User]>
 
 ### Update
 
-此方法更新与数据库中model实例关联的现有行/数据项。
+此方法更新数据库中model实例关联的现有行/数据项。
 
 如果你的Model已经有一个ID，调用`.save(on:)`会重定向到这个方法。 
 

@@ -11,7 +11,7 @@ Migrations 通常用于为model准备database schema。但是，它们也可以�
 让我们来看看如何准备一个支持数据库的Schema来接受 
 `User`（上一节中[previous section](models.md)的Model）。
 
-就像我们使用`Model`协议一样，我们会将`User`符合'Migration'协议。
+就像我们使用`Model`协议一样，我们会将`User`符合`Migration`协议。
 
 ```swift
 import Fluent
@@ -46,10 +46,10 @@ extension User: Migration {
 
 接下来，我们传递一个闭包，它接受一个`SchemaBuilder`作为我们的`User`模型。 然后，我们可以在这个构建器中调用`.field`来描述我们希望的哪些字段。
 
-于我们将关键路径传递给我们的'用户'模型（用`\ .`表示），Fluent可以查看这些属性的类型。
+于我们将关键路径传递给我们的`用户`模型（用`\ .`表示），Fluent可以查看这些属性的类型。
 对于大多数常见类型（`String`，`Int`，`Double`等），Fluent将自动确定要使用的最佳数据库字段类型。
 
-您也可以选择手动选择要用于给定字段的数据库字段类型。
+您也可以手动选择要用于给定字段的数据库字段类型。
 
 ```swift
 try builder.field(type: .text, for: \.name)
