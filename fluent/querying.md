@@ -6,7 +6,7 @@
 
 你需要查询数据库的第一件事是连接到它。幸运的是，他们很容易做到。
 
-您可以使用应用程序或传入请求来创建数据库连接。您只需访问数据库标识符。
+你可以使用应用程序或传入请求来创建数据库连接。你只需访问数据库标识符。
 
 ### Request
 
@@ -29,7 +29,7 @@ router.get(...) { req in
 
 ### Application
 
-您也可以使用应用程序创建数据库连接。这对于必须从请求/响应事件以外的情况下访问数据库非常有用。
+你也可以使用应用程序创建数据库连接。这对于必须从请求/响应事件以外的情况下访问数据库非常有用。
 
 ```swift
 let res = app.withConnection(to: .foo) { db in
@@ -38,7 +38,7 @@ let res = app.withConnection(to: .foo) { db in
 print(res) // Future<T>
 ```
 
-这通常在您的应用程序的[boot section](../getting-started/structure.md#boot)中完成。
+这通常在你的应用程序的[boot section](../getting-started/structure.md#boot)中完成。
 
 !!! 警告
     不要在路由闭包中使用应用程序创建的数据库连接（响应请求时）。始终使用传入请求创建连接以避免线程问题。
@@ -60,7 +60,7 @@ router.post(...) { req in
 
 `.save（on：）`返回一个`Future <Void>`，在当用户保存好时完成。在这个例子中，我们通过调用`.map`并传入最近保存的用户，将该`Future <Void>`映射到`Future <User>`。 
 
-您也可以使用`.map`来返回一个简单的成功响应。
+你也可以使用`.map`来返回一个简单的成功响应。
 
 ```swift
 
@@ -76,7 +76,7 @@ router.post(...) { req in
 
 ### Multiple
 
-如果您有多个实例要保存，请使用数组来完成。数组只包含futures。
+如果你有多个实例要保存，请使用数组来完成。数组只包含futures。
 
 ```swift
 router.post(...) { req in

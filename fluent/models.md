@@ -3,15 +3,15 @@
 Model是Fluent的核心。与其他语言的ORM不同，Fluent不会对返回无类型的数组或字典进行查询。而是使用model查询数据库。这使得Swift编译器能够捕获许多让ORM用户困扰多年的错误。
 
 !!! 资料
-    本指南提供了一个`Model`协议及其相关方法和属性的概述。如果您刚开始使用，请在[Fluent &rarr; 开始](getting-started.md)中查看数据库指南。
+    本指南提供了一个`Model`协议及其相关方法和属性的概述。如果你刚开始使用，请在[Fluent &rarr; 开始](getting-started.md)中查看数据库指南。
 
 `Model`是`Fluent`模块中的一个协议. 它扩展了可用于类型擦除的`AnyModel`协议.
 
 ## Conformance
 
-`struct` s 和`class` es 都可以符合`Model`, 然后您必须特别注意 如果你使用了一个`struct`作为Fluent的返回值类型。自从Fluent实现异步工作，对值类型(`struct`)任何的突变都必须返回`Model`的新副本作为future的结果。
+`struct` s 和`class` es 都可以符合`Model`, 然后你必须特别注意 如果你使用了一个`struct`作为Fluent的返回值类型。自从Fluent实现异步工作，对值类型(`struct`)任何的突变都必须返回`Model`的新副本作为future的结果。
 
-通常，您将Model符合特定于数据库包（如：PostgreSQLModel）中的其中一种便利Model。 但是，如果您想定制附加属性, 如类型的`idKey`, 将使用`Model`协议自身.
+通常，你将Model符合特定于数据库包（如：PostgreSQLModel）中的其中一种便利Model。 但是，如果你想定制附加属性, 如类型的`idKey`, 将使用`Model`协议自身.
 
 让我们来看看基本的`Model`一致性是怎样的。
 
@@ -50,11 +50,11 @@ final class User: Model {
 
 ## Associated Types
 
-`Model`定义了一些关联类型来帮助Fluent创建类型安全的API供您使用。如果您需要不带关联类型的类型擦除版本，请查看`AnyModel`
+`Model`定义了一些关联类型来帮助Fluent创建类型安全的API供你使用。如果你需要不带关联类型的类型擦除版本，请查看`AnyModel`
 
 ### Database
 
-此类型向Fluent表明您打算使用此Model的数据库。使用这些信息，Fluent可以动态地将适当的方法和数据类型添加到您使用此Model时创建的任何 `QueryBuilder`中。
+此类型向Fluent表明你打算使用此Model的数据库。使用这些信息，Fluent可以动态地将适当的方法和数据类型添加到你使用此Model时创建的任何 `QueryBuilder`中。
 
 ```swift
 final class User: Model {
@@ -64,7 +64,7 @@ final class User: Model {
 }
 ```
 
-可以通过向类或结构体添加泛型来创建这种关联类型（如`User <T>`）。这对于您尝试为Fluent创建通用扩展的情况非常有用，例如可能是附加服务提供者。
+可以通过向类或结构体添加泛型来创建这种关联类型（如`User <T>`）。这对于你尝试为Fluent创建通用扩展的情况非常有用，例如可能是附加服务提供者。
 
 ```swift
 final class User<D>: Model where D: Database {
@@ -74,13 +74,13 @@ final class User<D>: Model where D: Database {
 }
 ```
 
-您可以向`D`添加更多条件, 例如`QuerySupporting`或者`SchemaSupporting`。您也可以动态扩展和符合您的通用Model来使用`extension User where D: ... { }`。
+你可以向`D`添加更多条件, 例如`QuerySupporting`或者`SchemaSupporting`。你也可以动态扩展和符合你的通用Model来使用`extension User where D: ... { }`。
 
-也就是说，对于大多数情况，您应该尽可能使用具体的类型别名。 Fluent 3旨在让您通过在您的Model和底层驱动程序之间建立强有力的连接来实现数据库的强大功能。
+也就是说，对于大多数情况，你应该尽可能使用具体的类型别名。 Fluent 3旨在让你通过在你的Model和底层驱动程序之间建立强有力的连接来实现数据库的强大功能。
 
 ### ID
 
-该属性定义了您的model将用于其唯一标识符的类型。
+该属性定义了你的model将用于其唯一标识符的类型。
 
 ```swift
 final class User: Model {
@@ -108,11 +108,11 @@ final class User: Model {
 }
 ```
 
-默认情况下，这是您的Model小写的类型名称。
+默认情况下，这是你的Model小写的类型名称。
 
 ### Entity
 
-实体是用来表示“table”("表")或"collection"(“集合”)的通用词，具体取决于您用于Fluent的后端类型。 
+实体是用来表示“table”("表")或"collection"(“集合”)的通用词，具体取决于你用于Fluent的后端类型。 
 
 ```swift
 final class Goose: Model {
@@ -126,7 +126,7 @@ final class Goose: Model {
 
 ### ID Key
 
-ID键是一个可写的[key path](https://github.com/apple/swift-evolution/blob/master/proposals/0161-key-paths.md) 指向您的Model的唯一标识符属性。
+ID键是一个可写的[key path](https://github.com/apple/swift-evolution/blob/master/proposals/0161-key-paths.md) 指向你的Model的唯一标识符属性。
 
 通常这将是一个名为`id`的属性 (对于某些数据库来说，它是`_id`). 然而，理论上你可以使用你喜欢的任何键。
 
@@ -192,7 +192,7 @@ let didCreate = user.create(on: req)
 print(didCreate) /// Future<User>
 ```
 !!! 资料
-    如果您使用的是值类型(`struct`), 则由`.create(on:)`返回的model实例将包含Model的新ID。
+    如果你使用的是值类型(`struct`), 则由`.create(on:)`返回的model实例将包含Model的新ID。
 
 ### Read
 
