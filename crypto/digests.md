@@ -1,12 +1,12 @@
-# Message Digests 消息摘要
+# Message Digests 消息摘要算法
 
-加密哈希函数 (又称为报文摘要算法) convert data of arbitrary size to a fixed-size digest. These are most often used for generating checksums or identifiers for large data blobs.
+加密哈希函数 (又称为消息摘要算法) convert data of arbitrary size to a fixed-size digest. These are most often used for generating checksums or identifiers for large data blobs.
 
 Read more about [Cryptographic hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function) on Wikipedia.
 
 ## Hash 哈希
 
-利用全局便利变量去创建使用常用算法的哈希。
+利用全局便捷变量去创建哈希，以便使用常用的算法。
 
 ```swift
 import Crypto
@@ -57,7 +57,7 @@ try BCrypt.verify("foo", created: hash) // false
 
 ## HMAC
 
-HMAC是一种用于创建 _keyed_ 哈希算法。如果使用不同的密钥，HMAC将为相同的输入生成不同的哈希值。
+HMAC是一种用于创建 _keyed_ 哈希。如果使用不同的密钥，HMAC将为相同的输入生成不同的哈希值。
 
 ```swift
 let digest = try HMAC.SHA1.authenticate("vapor", key: "secret") 

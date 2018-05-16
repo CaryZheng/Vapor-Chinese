@@ -1,6 +1,6 @@
-# Asymmetric Cryptography
+# Asymmetric Cryptography 非对称密码算法
 
-非对称密码术（也称为公钥密码术）是使用多个密钥的密码系统 - 通常是“公共”和“私人”密钥。
+非对称密码算法（也称为公钥密码算法）是使用多个密钥的密码系统 - 通常是“公共”和“私人”密钥。
 
 参阅 Wikipedia 上关于 [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)更多内容。
 
@@ -18,7 +18,7 @@ let signature = try RSA.SHA512.sign("vapor", key: .private(pem: privateKey))
 !!! 资料
 	只有私钥可以用 _create_ 签名。
 
-These signatures can be verified against the same data later using either the public or private key.
+可以使用公钥或私钥对这些签名进行相同的数据验证。
 
 ```swift
 let publicKey: String = ...
