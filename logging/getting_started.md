@@ -7,7 +7,7 @@ Logging 模块作为Vapor控制台包 ([vapor/console](https://github.com/vapor/
 
 ## Usage
 
-这个包包含了Vapor， 并且默认导出。当你导入`Vapor`时你就可以访问所有的`Logging` APIs了。
+这个包包含于Vapor中， 并且默认导出。当你导入`Vapor`时你就可以访问所有的`Logging` APIs了。
 
 ```swift
 import Vapor // implies import Logging
@@ -15,7 +15,7 @@ import Vapor // implies import Logging
 
 ### Standalone
 
-日志模块是 Vapor 控制台包的很大一部分功能，也可以与任何Swift项目一起使用。
+日志模块，作为 Vapor 控制台包的一部分，也可以与任何Swift项目一起使用。
 
 要在你的package里引用它，添加一下代码到你的 `Package.swift` 文件里。
 
