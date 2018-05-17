@@ -1,6 +1,6 @@
 # Using Crypto 使用Crypto
 
-Crypto ([vapor/crypto](https://github.com/vapor/crypto)) i是一个包含与密码和数据生成相关的公共API的库。 这个包包含两个模块：
+Crypto ([vapor/crypto](https://github.com/vapor/crypto)) 是一个包含与密码和数据生成相关的公共API的库。 这个包包含两个模块：
 
 - `Crypto`
 - `Random`

@@ -1,8 +1,8 @@
 # Message Digests 消息摘要算法
 
-加密哈希函数 (又称为消息摘要算法) convert data of arbitrary size to a fixed-size digest. These are most often used for generating checksums or identifiers for large data blobs.
+加密哈希函数 (又称为消息摘要算法) 可以将任意大小的数据转换成一段固定大小的信息。它们经常被用于生成校验码或作为数据块的标志符。
 
-Read more about [Cryptographic hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function) on Wikipedia.
+详情可见 Wikipedia 上的 [Cryptographic hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function)。
 
 ## Hash 哈希
 
@@ -32,7 +32,7 @@ print(digest) /// Data
 
 ## BCrypt
 
-BCrypt是一种流行的哈希算法，具有可配置的复杂性并自动加salting。
+BCrypt是一种流行的哈希算法，具有高度的可配置性，并能自动处理 salting。
 
 ### Hash
 
