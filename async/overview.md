@@ -4,6 +4,7 @@
 Promises 和 futures是有关联的，但也是截然不同的类型。Promises 用来创建futures。通常，你将使用Vapor的APIs所返回的future来工作从而不必担心创建promises。
 
 |-|-|-|-|
+| ---------- | :-----------:  | :-----------: |
 |type | description| mutability|methods|
 
 
