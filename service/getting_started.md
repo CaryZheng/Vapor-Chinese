@@ -15,7 +15,7 @@ print(logger is PrintLogger) // true
 
 ## Vapor
 
-这个包已包含了Vapor，并且默认导出。当你引入`Vapor`,你可以访问所有`Service`的API 。
+这个包已包含在Vapor中，并且默认导出。当你引入`Vapor`,你可以访问所有`Service`的API 。
 
 ```swift
 import Vapor
@@ -45,7 +45,8 @@ let package = Package(
 
 用 `import Service` 去访问 APIs.
 
-!!! 警告
-    指南中的一部分内容会涉及Vapor特殊的APIs，但大部分都适用于Services包。
-	
-	访问 [API Docs](https://api.vapor.codes/service/latest/Service/index.html) 去获得 Service-specific API 的资讯.
+> 警告
+>
+>   指南中的一部分内容会涉及Vapor特殊的APIs，但大部分都适用于Services包。
+>	
+>	访问 [API Docs](https://api.vapor.codes/service/latest/Service/index.html) 去获得 Service-specific API 的资料.

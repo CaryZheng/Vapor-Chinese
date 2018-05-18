@@ -5,7 +5,7 @@
 Providers 能做:
 
 - 注册服务到你的 [`Services`](https://api.vapor.codes/service/latest/Service/Structs/Services.html) 结构里.
-- 连接你的 [`Container`](https://api.vapor.codes/service/latest/Service/Protocols/Container.html) 的生命周期.
+- Hook 你的 [`Container`](https://api.vapor.codes/service/latest/Service/Protocols/Container.html) 的生命周期.
 
 ## Register
 
@@ -19,8 +19,9 @@ try services.register(FooProvider())
 
 通常在 [`configure.swift`](../getting-started/structure/#configureswift)完成。
 
-!!! 注意
-	你在Github上搜索 [`vapor-service`](https://github.com/topics/vapor-service) 标签就可以搜索到一系列使用此方法来暴露Services的包。 
+> 注意
+>
+	>你在Github上搜索 [`vapor-service`](https://github.com/topics/vapor-service) 标签就可以搜索到一系列使用此方法来暴露Services的包。 
 
 
 ## Create
@@ -46,6 +47,6 @@ public final class LoggerProvider: Provider {
 }
 ```
 
-现在，当有人注册了`LoggerProvider`到它的`LoggerProvider`结构里，它将会自动注册打印和文件日志功能。当容器启动时，成功的消息将会被打印出来，以验证provider已添加好了。
+现在，当有人注册了`LoggerProvider`到它的`Services`结构里，它将会自动注册打印和文件日志功能。当容器启动时，成功的消息将会被打印出来，以验证provider已添加好了。
 
 参阅 [`Provider`](https://api.vapor.codes/service/latest/Service/Protocols/Provider.html) 协议的API文档来获取更多资料。

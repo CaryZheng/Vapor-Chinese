@@ -15,8 +15,9 @@ let privateKey: String = ...
 let signature = try RSA.SHA512.sign("vapor", key: .private(pem: privateKey))
 ```
 
-!!! 资料
-	只有私钥可以用 _create_ 签名。
+> 资料
+>
+>	只有私钥可以用 _create_ 签名。
 
 可以使用公钥或私钥对这些签名进行相同的数据验证。
 
