@@ -1,2 +1,285 @@
-Coming soon...
+# Content
 
+在Vapor3 中，所含有内容类型(JSON, protobuf, [URLEncodedForm](../url_encoded_form/), [Multipart](../multipart/),等)使用方法都是一样的。你所有需要解析和序列化的内容必须是一个遵守了 ```Codable``` 协议的类或结构体
+
+在这里我们主要使用JSON来作为例子，但请记住，API的使用方法对于任何支持的类型都是相同的
+
+# Server
+
+这个部分介绍一下在客户端和服务端连接中消息发送的编解码。查看 [client](#client) 来了解外部API消息发送的编解码方式
+
+## Request
+
+我们来看看你将如何解析并发送如下请求到服务器
+
+```swift
+POST /login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "user@vapor.codes",
+    "password": "don't look!"
+}
+```
+
+首先创建一个类或者结构体来表示你期望的数据
+
+```swift
+import Vapor
+
+struct LoginRequest: Content {
+    var email: String
+    var password: String
+}
+```
+
+注意key与请求数据中的key名需要相同，以及数据类型也需要相同。接下来让类或结构体遵守 Content 协议
+
+### Decode
+
+现在我们可以来解码上面的HTTP请求了。每一个[request](https://api.vapor.codes/vapor/latest/Vapor/Classes/Request.html)都有一个[ContentContainer](https://api.vapor.codes/vapor/latest/Vapor/Structs/ContentContainer.html)，我们可以使用它来解码消息体中的内容
+
+```swift
+router.post("login") { req -> Future<HTTPStatus> in
+    return req.content.decode(LoginRequest.self).map { loginRequest in
+        print(loginRequest.email) // user@vapor.codes
+        print(loginRequest.password) // don't look!
+        return HTTPStatus.ok
+    }
+}
+```
+我们在```decode(...)```过程中使用 ```.map(to:)```方法来返回一个 [future](../async/getting_started.md)
+
+> Note
+> 
+> 从请求解码这个过程是异步的，因为HTTP允许使用分块传输编码方式将主体分为多个部分
+
+### Router
+
+为了使传入请求的内容解码更加容易，Vapor在 [Router](https://api.vapor.codes/vapor/latest/Vapor/Protocols/Router.html) 中提供了一些自动完成此功能的扩展。
+
+```swift
+router.post(LoginRequest.self, at: "login") { req, loginRequest in
+    print(loginRequest.email) // user@vapor.codes
+    print(loginRequest.password) // don't look!
+    return HTTPStatus.ok
+}
+```
+
+### Detect Type
+
+由于本例中的HTTP请求中我们将JSON声明为其内容类型，因此Vapor会自动使用JSON解码器。 对于以下请求，同样的方法也可以正常工作
+
+```swift
+POST /login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+email=user@vapor.codes&don't+look!
+```
+
+所有HTTP请求都必须包含一个内容类型才能生效。 因此，如果遇到未知类型，Vapor将自动选择适当的解码器或者抛出错误。
+
+> Tip
+> 
+> 你可以 [配置](#configure) Vapor使用的默认编码器和解码器
+
+
+### Custom
+
+如果需要你可以重写Vapor的编解码器，并传入
+
+```swift
+let user = try req.content.decode(User.self, using: JSONDecoder())
+print(user) // Future<User>
+```
+
+## Response
+
+我们来看一看如何为你的服务创建如下的响应
+
+```swift
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "name": "Vapor User",
+    "email": "user@vapor.codes"
+}
+```
+
+和解码一样，先创建一个结构体或者类来实现你期望的数据类型
+
+```swift
+import Vapor
+
+struct User: Content {
+    var name: String
+    var email: String
+}
+```
+
+然后让类或结构体遵守 ```content```协议
+
+### Encode
+
+现在我们来编码上面的HTTP响应
+
+```swift
+router.get("user") { req -> User in
+    return User(name: "Vapor User", email: "user@vapor.codes")
+}
+```
+
+这会创建一个默认的 带有```200 OK``` 状态码和最小标题的 ```Response``` 。你可以通过便利方法 ```encode(...)``` 来自定义响应体
+
+```swift
+router.get("user") { req -> Future<Response> in
+    return User(name: "Vapor User", email: "user@vapor.codes")
+        .encode(status: .created)
+}
+```
+
+### Override Type
+
+Response的内容默认会编码成JSON，你可以通过 ```as:``` 并传入参数来改变编码方式
+
+```swift
+try res.content.encode(user, as: .urlEncodedForm)
+```
+
+你也可以修改类或者结构体使用的媒体类型
+
+```swift
+struct User: Content {
+    /// See `Content`.
+    static let defaultContentType: MediaType = .urlEncodedForm
+
+    ...
+}
+```
+
+# <a name="client"></a> Client
+
+编码一个有Client 发送的请求内容和编码服务器HTTP响应的方式类似
+
+## Request
+
+我们来看看如何编码下面请求
+
+```swift
+POST /login HTTP/1.1
+Host: api.vapor.codes
+Content-Type: application/json
+
+{
+    "email": "user@vapor.codes",
+    "password": "don't look!"
+}
+```
+
+### Encode
+
+首先创建一个结构体或者类来实现你期望的数据类型
+
+```swift
+import Vapor
+
+struct LoginRequest: Content {
+    var email: String
+    var password: String
+}
+```
+
+现在我们已经准备好发起我们的请求了，假设我们再一个路由闭包内发起这个请求，我们将使用传入的请求作为一个容器
+
+```swift
+let loginRequest = LoginRequest(email: "user@vapor.codes", password: "don't look!")
+let res = try req.client().post("https://api.vapor.codes/login") { loginReq in
+    // encode the loginRequest before sending
+    try loginReq.content.encode(loginRequest)
+}
+print(res) // Future<Response>
+```
+
+## Response
+
+继续我们再encode 部分的例子，让我们看看如何解码来自client的Response
+
+```swift
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "name": "Vapor User",
+    "email": "user@vapor.codes"
+}
+```
+
+当然我们首先要创建一个结构体或类来表示期望的数据类型
+
+```swift
+import Vapor
+
+struct User: Content {
+    var name: String
+    var email: String
+}
+```
+
+### Decode
+
+现在我们准备好解码 Client 响应了
+
+```swift
+let res: Future<Response> // from the Client
+
+let user = res.flatMap { try $0.content.decode(User.self) }
+print(user) // Future<User>
+```
+
+## Example
+
+现在让我们看看完整的 [Client](https://api.vapor.codes/vapor/latest/Vapor/Protocols/Client.html) 请求，它们都会对内容进行编解码
+
+```swift
+// 创建 LoginRequest 数据
+let loginRequest = LoginRequest(email: "user@vapor.codes", password: "don't look!")
+// POST /login
+let user = try req.client().post("https://api.vapor.codes/login") { loginReq in 
+    // 请求发送前编码
+    return try loginReq.content.encode(loginRequest) 
+}.flatMap { loginRes in
+    // 接收到响应后解码
+    return try loginRes.content.decode(User.self) 
+}
+print(user) // Future<User>
+```
+
+# Query String
+
+URL-Encode的表单数据也可以像Content那样通过HTTP请求的URI query string来编解码. 所有你需要做的就是创建一个类或者结构体并且遵守 [Content](https://api.vapor.codes/vapor/latest/Vapor/Protocols/Content.html) 协议。在这个例子里我们将使用下面的结构体
+
+```swift
+struct Flags: Content {
+     var search: String?
+     var isAdmin: Bool?
+}
+```
+
+## Decode
+
+所有的 [Request]() 都有一个 [QueryContainer]() 你可以解码 query string
+
+```swift
+let flags = try req.query.decode(Flags.self)
+print(flags) // Flags
+```
+## Encode
+
+你也可以编码内容。这在使用 [Client](https://api.vapor.codes/vapor/latest/Vapor/Protocols/Client.html) 来编码查询字符串时很有用
+
+# Dynamic Properties
+
+# JSON
+
+# <a name="configure"></a> Configure
