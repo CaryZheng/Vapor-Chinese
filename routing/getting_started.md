@@ -1,47 +1,50 @@
-# Basics
+# Getting Started with Routing
 
-在Vapor中,默认路由是 EngineRouter。通过实现Router协议，可以实现一个自定义路由
+Routing([vapor/routing](https://github.com/vapor/routing))是像HTTP请求路由那样的一个小巧的框架。它允许你注册或者查看一些嵌套或者动态路径的组件。
+
+例如，路由组件可以帮助你完成一个像下面这样的请求，并获得一些动态构成的值
 
 ~~~
-let router = try EngineRouter.default()
+/users/:user_id/comments/:comment_id
 ~~~
 
-这里有两个可用的API，一个是由Routing库提供的，另一个是由Vapor内部实现的
+# Vapor
 
-## 通过Routing注册一个路由
+Routing package已经被包含在 Vapor中并默认导出，当你导入Vapor时,就可以获得所有Routing API的调用权限
 
-AsyncRouter 的 on 方法可以注册一个地址路由。例如下面是一个 GET /hello/world 的路由，并且会返回一个 "hello world!"
+> Tip：
+> 
+> 如果你使用Vapor，大多数路由API会被包装一层更方便的方法。你可以通过 [Vapor -> Routing](../)来了解更多信息
 
 ~~~swift
-router.on(.get, to: "hello", "world") { request in
-  return try Response(body: "Hello world!") 
-}
+import Vapor
 ~~~
 
-对于可变路径你可以使用 [parameters](./parameters.md)
+# 独立功能
 
-尾随闭包中会接收到一个 request。路由可以抛出error异常并且返回一个符合 future response 的响应
+Routing 是一个轻量级，少依赖的Swift组件库。这意味着你可以在不引入Vapor的情况下，在任何Swift项目中使用这个库。
 
-## 通过Vapor注册路由
-
-Vapor中我们目前加入了对 **.get**,**.put**,**.post**,**.patch** 和 **.delete** 路由的支持
-
-如果是可变路径，你也可以在这里使用[parameters](./parameters.md)
-
-Vapor 有一个额外的好处就是，除了直接返回 **Response** 外还可以返回 **Future < ResponseRepresentable >** 或者 **Future < Response >**
+引入Routing到你的项目中，可以添加下面代码到你的 **Package.swift**文件中
 
 ~~~swift
-router.get("components", "in", "path") { request in
-  return Response(status: .ok)
-}
+// swift-tools-version:4.0
+import PackageDescription
+
+let package = Package(
+    name: "Project",
+    dependencies: [
+        ...
+        .package(url: "https://github.com/vapor/routing.git", from: "3.0.0"),
+    ],
+    targets: [
+      .target(name: "Project", dependencies: ["Routing", ... ])
+    ]
+)
 ~~~
 
-## 路由注册完成
+通过 **import Routing** 来获得API调用权限
 
-在路由注册之后，你必须将router 添加到你的 services 中
+> 警告：
+> 
+> 这份文档会包含一些vapor特有API，但是大部分情况下适用于大多数路由，你可以通过[API文档](https://api.vapor.codes/routing/latest/Routing/index.html)来查看Routing的API信息
 
-~~~
-services.register(router, as: Router.self)
-~~~
-
-学习更多有关services的内容，请前往 [Getting Started -> Services](../getting_started/services.md)
