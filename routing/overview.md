@@ -3,6 +3,7 @@
 Routing([vapor/routing](https://github.com/vapor/routing))是像HTTP请求路由那样的一个小巧的框架。它允许你注册或者查看一些嵌套或者动态路径的组件。
 
 > Tip：
+> 
 > 如果你使用Vapor，大多数路由API会被包装一层更方便的方法。你可以通过 [Vapor -> Routing](../)来了解更多信息
 
 本引导将会向你展示如何注册静态和动态路由，并且让你了解如何使用[Parameters](https://api.vapor.codes/routing/latest/Routing/Protocols/Parameter.html)
@@ -32,8 +33,7 @@ print(router.route(path: ["foo"], parameters: &params)) // nil
 
 # Parameter
 
-让我们来看看注册一些动态路径组件的时候，其中有一部分路径为变量，我们需要收集起来稍后来使用这些变量。你会经常见到下面的情景当你像用户展示一个web页面的时候.
-
+让我们来看看注册一些动态路径组件的时候，其中有一部分路径为变量，我们需要收集起来稍后来使用这些变量。你会经常见到下面的情景，比如使用web页面展示一个用户.
 ~~~
 /users/:user_id
 ~~~
