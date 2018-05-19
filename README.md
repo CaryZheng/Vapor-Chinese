@@ -20,7 +20,7 @@ Vapor3 英文版：[https://docs.vapor.codes/3.0](https://docs.vapor.codes/3.0/)
 
 [https://github.com/CaryZheng/Vapor-Chinese](https://github.com/CaryZheng/Vapor-Chinese)
 
-翻译源文件托管于GitHub，欢迎 **Star** 。
+翻译源文件托管于GitHub，欢迎 [**Star**](https://github.com/CaryZheng/Vapor-Chinese) 。
 
 如果发现翻译问题，欢迎提 **issue** 和 **Pull Request** 。
 
