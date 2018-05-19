@@ -16,5 +16,13 @@ Vapor3 英文版：[https://docs.vapor.codes/3.0](https://docs.vapor.codes/3.0/)
 
 [Vapor3开发指南翻译计划](https://www.swiftmic.com/topic/9/vapor3%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92)
 
+### GitHub
+
+[https://github.com/CaryZheng/Vapor-Chinese](https://github.com/CaryZheng/Vapor-Chinese)
+
+翻译源文件托管于GitHub，欢迎 **Star** 。
+
+如果发现翻译问题，欢迎提 **issus** 和 **Pull Request** 。
+
 ### Contact
 QQ群 (Vapor交流)： 566732724
