@@ -22,7 +22,7 @@ Vapor3 英文版：[https://docs.vapor.codes/3.0](https://docs.vapor.codes/3.0/)
 
 翻译源文件托管于GitHub，欢迎 **Star** 。
 
-如果发现翻译问题，欢迎提 **issus** 和 **Pull Request** 。
+如果发现翻译问题，欢迎提 **issue** 和 **Pull Request** 。
 
 ### Contact
 QQ群 (Vapor交流)： 566732724
