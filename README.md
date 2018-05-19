@@ -1,4 +1,4 @@
-# Vapor开发指南（中文版）
+# Vapor3开发指南（中文版）
 [Vapor](https://vapor.codes) 是基于 Swift 实现的 Web 框架与服务，可运行于 macOS 和 Ubuntu 系统上。
 
 ### Swift社区
@@ -7,11 +7,10 @@ SwiftMic：[www.swiftmic.com](https://www.swiftmic.com)
 （致力于打造高品质Swift社区）
 
 ### Vapor文档
-英文原版 Doc 地址：[https://docs.vapor.codes/3.0](https://docs.vapor.codes/3.0/)
 
-Vapor v0.10 中文版 Doc 在线阅读地址：[传送门](https://carymic.gitbooks.io/vapor-chinese/content/)
+Vapor3 中文版 **（注意：目前处于翻译进行中）**：[https://vapor3.swiftmic.com](https://vapor3.swiftmic.com)
 
-Vapor3 中文版 Doc 在线阅读地址 **（注意：目前处于翻译计划中）**：[传送门](https://carymic.gitbooks.io/vapor3/content/)
+Vapor3 英文版：[https://docs.vapor.codes/3.0](https://docs.vapor.codes/3.0/)
 
 ### 如何协同翻译
 
