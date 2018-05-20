@@ -7,7 +7,7 @@
 
 ## Register
 
-我们来看看我们如何注册我们的`PrintLogger`。首先，您必须将您的类型符合`Service`。最简单的方法是简单地在添加扩展中。
+我们来看看我们如何注册我们的`PrintLogger`。首先，必须将你的类型符合`Service`。最简单的方法是只需要在extension中添加协议。
 
 ```swift
 extension PrintLogger: Service { }
@@ -30,7 +30,7 @@ services.register(Logger.self) { container in
 
 ### Service Type
 
-为了更容易地注册服务，您可以将符合 [`ServiceType`](https://api.vapor.codes/service/latest/Service/Protocols/ServiceType.html)。
+为了更容易地注册服务，您可以让它符合 [`ServiceType`](https://api.vapor.codes/service/latest/Service/Protocols/ServiceType.html) 协议。
 
 ```swift
 extension PrintLogger: ServiceType {
@@ -86,7 +86,7 @@ default: config.prefer(PrintLogger.self, for: Logger.self)
 > 注意
 >
 >	您还可以基于环境而不是使用服务配置（service config）动态 _register_ services。 
->	但是，选择service时是来自框架亦或是provider时必须采用service config方式。
+>	但是，选择来自框架或 provider 中的 services 时，service config 是必须的。
 
 ## Create
 
