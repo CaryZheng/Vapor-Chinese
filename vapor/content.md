@@ -280,6 +280,99 @@ print(flags) // Flags
 
 # Dynamic Properties
 
+关于Content的最多的问题是：
+
+> 如何添加属性到单独的一个Response
+
+Vapor3处理 ```Content``` 的方式完全基于 ```Codable```。在任何时候(可公开访问的)，你的数据都应该在一个类似 ```[String:Any]```的数据结构中，你可以按你期望的方式修改它。因此，你的App接收和返回的数据结构都必须是静态定义的。
+
+让我们来看看一个常见的场景，以便更好的理解这一点。通常你创建一个用户时，需要几种不同的数据格式:
+
+* create: 提供两次密码以便检查是否匹配
+* internal: 你应该存储一个散列函数而不是明文密码
+* public: 列出用户时不应该包含密码的哈希值
+
+为了实现这个，你需要创建三种类型的数据.
+
+```swift
+// Data required to create a user
+struct UserCreate: Content {
+    var email: String
+    var password: String
+    var passwordCheck: String
+}
+
+// Our internal User representation
+struct User: Model {
+    var id: Int?
+    var email: String
+    var passwordHash: Data
+}
+
+// Public user representation
+struct PublicUser: Content {
+    var id: Int
+    var email: String
+}
+
+// Create a router for POST /users
+router.post(UserCreate.self, at: "users") { req, userCreate -> PublicUser in
+    guard userCreate.password == passwordCheck else { /* some error */ }
+    let hasher = try req.make(/* some hasher */)
+    let user = try User(
+        email: userCreate.email, 
+        passwordHash: hasher.hash(userCreate.password)
+    )
+    // save user
+    return try PublicUser(id: user.requireID(), email: user.email)
+}
+```
+
+对于其它方法，例如 ```PATCH``` 和 ```PUT``` ，你或许需要创建更多的类型来支持唯一语义
+
+## 好处 Benefits
+
+与动态解决方案相比，这种方法看起来可能有点冗余，但它拥有很多关键优势:
+
+* **静态类型** : 基于Swift和Codable，
+* **可读性** : 使用Swift类型时，无需使用字符串和可选链
+* **可维护性** : 在大型项目中，信息的分离是项目非常干净
+* **可共享** ： 定义路由所接受，返回的类型，可用于OpenAPI规范，甚至可以直接和客户端共享
+* **性能** : 使用Swift的类型，比使用[Sting:Any]字典性能更好
+
 # JSON
 
+JSON是一种非常流行的API编码格式，日期，数据，浮点型等编码方式是非标准的。 正因为如此，使用自定义的JSONDecoder可以让Vapor在与其他API进行交互时更很容易。
+
+```swift
+// Conforms to Encodable
+let user: User ... 
+// Encode JSON using custom date encoding strategy
+try req.content.encode(json: user, using: .custom(dates: .millisecondsSince1970))
+```
+
+也可以用下面方法解码
+
+```swift
+// Decode JSON using custom date encoding strategy
+let user = try req.content.decode(json: User.self, using: .custom(dates: .millisecondsSince1970))
+```
+
+如果你想在全局使用自定义JSON编解码器，你可以在 [configuration](#configure) 中进行
+
 # <a name="configure"></a> Configure
+
+使用 [ ContentConfig ](https://api.vapor.codes/vapor/latest/Vapor/Structs/ContentConfig.html) 来注册应用程序的编解码器,这些编解码器将用于任何您使用 ```content.encode/content.decode``` 的地方
+
+```swift
+/// Create default content config
+var contentConfig = ContentConfig.default()
+
+/// Create custom JSON encoder
+var jsonEncoder = JSONEncoder()
+jsonEncoder.dateEncodingStrategy = .millisecondsSince1970
+
+/// Register JSON encoder and content config
+contentConfig.use(encoder: jsonEncoder, for: .json)
+services.register(contentConfig)
+```
