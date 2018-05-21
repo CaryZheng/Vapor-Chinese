@@ -50,6 +50,7 @@ let client: Client = ...
 let futureResponse = futureString.flatMap(to: Response.self) { string in
     return da
 尽管我们已经提供了一个可用于转换的value，但这仍然是一种转变。在所有之前的futures完成（或失败）之前，future将不会完成
+```
 
 ## Chanining
 关于futures转化的重要部分是它们可以通过链式调用。这使你可以轻松表达许多转换和子任务。
