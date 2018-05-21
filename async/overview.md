@@ -58,7 +58,6 @@ let futureResponse = futureString.flatMap(to: Response.self) { string in
 ```
 /// 结社我们获取一个future返回值从某个api
 let futureString: Future<String> = ...
-
 /// 假设我们已经初始化了一个客户端
 let client: Client = ... 
 
@@ -71,7 +70,6 @@ let futureResponse = futureString.map(to: URL.self) { string in
 }.flatMap(to: Response.self) { url in
     return client.get(url)
 }
-
 print(futureResponse) //Future<Response>
 ```
 初次调用`Map`之后，会创建一个临时`Future <URL>`类型，这个future对象会被立刻通过flat-map操作转为一个`Future<Response>`类型。
@@ -87,7 +85,6 @@ print(futureResponse) //Future<Response>
 ```
 /// Assume we get a future string back from some API
 let futureString: Future<String> = ...
-
 futureString.do { string in
     print(string) // 实际值
 }.catch { error in
@@ -103,7 +100,6 @@ futureString.do { string in
 ```
 /// Assume we get a future string back from some API
 let futureString: Future<String> = ...
-
 futureString.always {
     print("The future is complete!")
 }
@@ -117,7 +113,6 @@ futureString.always {
  ```
  /// Assume we get a future string back from some API
 let futureString: Future<String> = ...
-
 /// 一直阻塞到string操作完成
 let string = try futureString.wait()
 print(string) /// String
@@ -136,10 +131,8 @@ print(string) /// String
 let promiseString = req.eventLoop.newPromise(String.self)
 print(promiseString) // Promise<String>
 print(promiseString.futureResult) // Future<String>
-
 /// Completes the associated future
 promiseString.succeed(result: "Hello")
-
 /// Fails the associated future
 promiseString.fail(error: ...)
 ```
