@@ -10,7 +10,7 @@ print(res) // Future<Response>
 
 # Container 容器
 
-你需要做的第一键事情是创建客户端的服务容器 [Container](../getting_started/services.md)
+你需要做的第一件事情是创建客户端的服务容器 [Container](../getting_started/services.md)
 
 如果你正在使用外部请求的结果来作为服务端内部请求的输入，你需要使用 ```Request``` 容器来创建客户端，这是很常见的案例
 

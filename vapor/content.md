@@ -24,6 +24,7 @@ Content-Type: application/json
 
 首先创建一个类或者结构体来表示你期望的数据
 
+
 ```swift
 import Vapor
 
@@ -190,7 +191,7 @@ struct LoginRequest: Content {
 }
 ```
 
-现在我们已经准备好发起我们的请求了，假设我们再一个路由闭包内发起这个请求，我们将使用传入的请求作为一个容器
+现在我们已经准备好发起我们的请求了，假设我们在一个路由闭包内发起这个请求，我们将使用传入的请求作为一个容器
 
 ```swift
 let loginRequest = LoginRequest(email: "user@vapor.codes", password: "don't look!")
@@ -203,7 +204,7 @@ print(res) // Future<Response>
 
 ## Response
 
-继续我们再encode 部分的例子，让我们看看如何解码来自client的Response
+继续我们在 encode 部分的例子，让我们看看如何解码来自client的Response
 
 ```swift
 HTTP/1.1 200 OK
@@ -278,6 +279,11 @@ print(flags) // Flags
 
 你也可以编码内容。这在使用 [Client](https://api.vapor.codes/vapor/latest/Vapor/Protocols/Client.html) 来编码查询字符串时很有用
 
+```swift
+let flags: Flags ...
+try req.query.encode(flags)
+```
+
 # Dynamic Properties
 
 关于Content的最多的问题是：
@@ -336,7 +342,7 @@ router.post(UserCreate.self, at: "users") { req, userCreate -> PublicUser in
 
 * **静态类型** : 基于Swift和Codable，
 * **可读性** : 使用Swift类型时，无需使用字符串和可选链
-* **可维护性** : 在大型项目中，信息的分离是项目非常干净
+* **可维护性** : 在大型项目中，信息的分离使项目非常干净
 * **可共享** ： 定义路由所接受，返回的类型，可用于OpenAPI规范，甚至可以直接和客户端共享
 * **性能** : 使用Swift的类型，比使用[Sting:Any]字典性能更好
 
