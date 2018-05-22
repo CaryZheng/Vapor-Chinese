@@ -47,6 +47,6 @@ let package = Package(
 
 > 警告
 >
->   指南中的一部分内容会涉及Vapor特殊的APIs，但大部分都适用于Services包。
+>   指南中的一部分内容会涉及Vapor特有的APIs，但大部分情况下都适用于Services包。
 >	
->	访问 [API Docs](https://api.vapor.codes/service/latest/Service/index.html) 去获得 Service-specific API 的资料.
+>	通过访问 [API Docs](https://api.vapor.codes/service/latest/Service/index.html) 去获得 Service-specific API 的资料.
