@@ -7,10 +7,11 @@ Promises 和 futures是有关联的，但也是截然不同的类型。Promises 
 | ---------- | :-----------:  | :-----------: |:-----------: |
 | `Future`   |引用一个可能还是不可用的对象  |只读    |  `.map(to:_:)` `.flatMap(to:_:)` `do(_:) catch(_:)` |
 | `Promise` | 提供一些异步的对象|可读写|`succeed(_:)` `fail(_:)`|
+
 `Future`是基于回调的异步API的替代品,Futures可以链式以及转化来使用，这是简单闭包无法企及的方式，这使得Futures非常强大。
 
 ## Transforming
-就像Swift中的可选项，期货可以被`mapped`以及` flat-mapped`。这些是你在futures上执行的最常见操作
+就像Swift中的可选项，futures可以被`mapped`以及` flat-mapped`。这些是你在futures上执行的最常见操作
 
 
 | method      | signature     | description   |
@@ -48,7 +49,7 @@ let client: Client = ...
 
 /// Flat-map 操作将Future<String>转为Future<Response>
 let futureResponse = futureString.flatMap(to: Response.self) { string in
-    return da
+    return client.get(string)
 尽管我们已经提供了一个可用于转换的value，但这仍然是一种转变。在所有之前的futures完成（或失败）之前，future将不会完成
 ```
 
