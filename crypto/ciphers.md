@@ -4,7 +4,7 @@
 
 参阅 Wikipedia 里的 [ciphers](https://en.wikipedia.org/wiki/Cipher)。
 
-## Encrypt 加密
+## Encrypt
 
 使用全局便捷变量以通用算法对数据进行加密。
 
@@ -13,7 +13,7 @@ let ciphertext = try AES128.encrypt("vapor", key: "secret")
 print(ciphertext) /// Data
 ```
 
-## Decrypt 解密
+## Decrypt
 
 Decryption 和 [encryption](#encrypt) 非常类似. 以下代码片段展示了如何解密我们前面例子中的密文。
 

@@ -1,10 +1,10 @@
-# Message Digests 消息摘要算法
+# Message Digests
 
 加密哈希函数 (又称为消息摘要算法) 可以将任意大小的数据转换成一段固定大小的信息。它们经常被用于生成校验码或作为数据块的标志符。
 
 详情可见 Wikipedia 上的 [Cryptographic hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function)。
 
-## Hash 哈希
+## Hash
 
 利用全局便捷变量去创建哈希，以便使用常用的算法。
 
