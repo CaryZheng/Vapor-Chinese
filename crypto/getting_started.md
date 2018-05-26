@@ -5,7 +5,7 @@ Crypto ([vapor/crypto](https://github.com/vapor/crypto)) 是一个包含与密�
 - `Crypto`
 - `Random`
 
-## With Vapor 和Vapor一起使用
+## With Vapor
 
 此包默认包含在Vapor中，只需添加即可：
 
@@ -14,7 +14,7 @@ import Crypto
 import Random
 ```
 
-## Without Vapor 不和Vapor一起使用
+## Without Vapor
 
 要使用它, 添加以下代码到 `Package.swift` 文件里.
 

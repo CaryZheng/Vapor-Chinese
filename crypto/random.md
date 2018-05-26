@@ -1,8 +1,8 @@
-# Random 随机
+# Random
 
 `Random` 模块处理随机数据的生成，包括随机数的产生。
 
-## Data Generator 数据生成器
+## Data Generator
 
 [`DataGenerator`]() 类能产生所有随机数据生成器。
 

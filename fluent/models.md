@@ -149,7 +149,7 @@ final class User: Model {
 
 `idKey` 属性必须指向具有类型匹配[ID](#id)的可选可写（var）属性。
 
-## 生命周期
+## Lifecycle
 
 在`Model`里有几个生命周期的方法,可以通过重写来关联Fluent事件。
 

@@ -72,7 +72,7 @@ extension User: Migration {
 }
 ```
 
-## Example 例子
+## Example
 
 我们现在有一个完整的migration功能的model！
 
@@ -94,6 +94,6 @@ extension TestUser: Migration {
 }
 ```
 
-## Done 完成
+## Done
 
 你有一个可靠的Fluent的model和migration了，可以继续学习 [querying](querying.md)你的model. 
