@@ -1,6 +1,6 @@
 # Cipher Algorithms
 
-密码允许您使用密钥加密明文数据，产生密文。此密文可以稍后使用相同的密钥通过相同的密码进行解密。
+密码允许你使用密钥加密明文数据，产生密文。此密文可以稍后使用相同的密钥通过相同的密码进行解密。
 
 参阅 Wikipedia 里的 [ciphers](https://en.wikipedia.org/wiki/Cipher)。
 
