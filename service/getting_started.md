@@ -1,6 +1,6 @@
 # Getting Started with Service
 
-服务（Service ([vapor/service](https://github.com/vapor/service)) ） 是一个依赖注入（控制翻转）框架。它允许你以可维护的方式去注册、配置和创建应用程序的依赖关系。 
+服务（Service ([vapor/service](https://github.com/vapor/service)) ） 是一个依赖注入（控制反转）框架。它允许你以可维护的方式去注册、配置和创建应用程序的依赖关系。 
 
 ```swift
 /// register a service during boot

@@ -2,7 +2,7 @@
 
 Multipart是网络上广泛支持的编码。它最常用于序列化Web表单，特别是包含像图片这类富媒体的表单。它允许在每个部分编码成任意数据，这要归功于单独定义的独特分隔符 _boundary_ 。这个边界由client保证不出现在数据的任何地方。
 
-Multipart是一种功能强大的编码，但很少使用它的基本格式。最常用的是`multipart/form-data`。该编码为多部分数据的每个部分添加了一个`"name"` 属性。这是序列化Web表单所必需的。对于本指南的其余部分，都是在假设我们正在讨论`multipart/form-data`，除非另有说明。
+Multipart是一种功能强大的编码，但很少使用它的基本格式。最常用的是`multipart/form-data`。该编码为multipart数据的每个部分添加了一个`"name"` 属性。这是序列化Web表单所必需的。对于本指南的其余部分，都是在假设我们正在讨论`multipart/form-data`，除非另有说明。
 
 > 提示
 >
@@ -37,11 +37,11 @@ Content-Disposition: form-data; name="image"; filename="droplet.png"
 --123--
 ```
 
-您可以看到多部分数据使用 _boundary_（在本例中为`“123”`）来分隔数据。这通常会是一个更长的字符串。发送多部分编码请求的客户端必须确保其提供的边界不会出现在发送给您的内容中的任何位置。这就是允许这种编码用于发送文件等的原因。
+您可以看到multipart数据使用 _boundary_（在本例中为`“123”`）来分隔数据。这通常会是一个更长的字符串。发送multipart编码请求的客户端必须确保其提供的边界不会出现在发送给您的内容中的任何位置。这就是允许这种编码用于发送文件等的原因。
 
 ### Form
 
-有很多方法可以创建多部分编码的请求，但最常见的是HTML Web表单。以下是这个请求的HTML表单可能看起来像什么。
+有很多方法可以创建multipart编码的请求，但最常见的是HTML Web表单。以下是这个请求的HTML表单可能看起来像什么。
 
 ```html
 <form method="POST" action="/users" enctype="multipart/form-data">
@@ -55,7 +55,7 @@ Content-Disposition: form-data; name="image"; filename="droplet.png"
 
 ### Content
 
-现在我们来看看如何在Vapor中处理这个请求。第一步（与[`Content`]（https://api.vapor.codes/vapor/latest/Vapor/Protocols/Content.html））一样）是创建一个代表数据结构的`Codable`结构。
+现在我们来看看如何在Vapor中处理这个请求。第一步（与[`Content`](https://api.vapor.codes/vapor/latest/Vapor/Protocols/Content.html) 一样）是创建一个代表数据结构的`Codable`结构。
 
 ```swift
 import Vapor
@@ -67,8 +67,9 @@ struct User: Content {
 }
 ```
 
-!!! 提示
-    如果您想要访问文件名，则可以使用 [`File`](https://api.vapor.codes/core/latest/Core/Structs/File.html) 而不是`Data`。
+> 提示
+>
+>    如果您想要访问文件名，则可以使用 [`File`](https://api.vapor.codes/core/latest/Core/Structs/File.html) 而不是`Data`。
 
 现在我们有了 `User` 结构， 让我们解码这个请求！我们可以使用 [`ContentContainer`](https://api.vapor.codes/vapor/latest/Vapor/Structs/ContentContainer.html) 轻松完成此操作。
 
@@ -87,7 +88,7 @@ router.post("users") { req -> Future<HTTPStatus> in
 
 ## Encode
 
-API对多部分数据进行编码的次数比对其进行解码的次数少得多。但是，Vapor的编码也很容易。使用我们前面例子中的`User`结构，这里是我们如何编码一个多部分编码的响应。
+API对multipart数据进行编码的次数比对其进行解码的次数少得多。但是，Vapor的编码也很容易。使用我们前面例子中的`User`结构，这里是我们如何编码一个multipart编码的响应。
 
 ```swift
 router.get("multipart") { req -> User in

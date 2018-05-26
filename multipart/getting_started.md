@@ -36,6 +36,7 @@ let package = Package(
 
 使用 `import Multipart` 去使用所有的APIs。
 
-!!! 警告
-	指南中的一部分内容会涉及Vapor特有的APIs，但大部分情况下都适用于Multipart package。
+> 警告
+>
+>	指南中的一部分内容会涉及Vapor特有的APIs，但大部分情况下都适用于Multipart package。
 	通过访问 [API Docs](https://api.vapor.codes/multipart/latest/Multipart/index.html) 去获得更多关于 Multipart-specific API 的资料。
