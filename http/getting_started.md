@@ -4,7 +4,7 @@ HTTP ([vapor/http](https://github.com/vapor/http)) 是一个基于SwiftNIO构建
 
 > 提示
 >
->    如果你使用Vapor，大部分的HTTP API都已被囊括在它的便捷方法里。通常，与您交互的唯一HTTP类型是Request或Response的http属性。通常，与您交互的唯一`http`类型是`Request` or `Response`的属性。
+>    如果你使用Vapor，大部分的HTTP API都已被囊括在它的便捷方法里。通常，与您交互的唯一HTTP类型是Request或Response的http属性。
 
 ## Vapor
 
@@ -16,7 +16,7 @@ import Vapor
 
 ## Standalone
 
-HTTP包是轻量级的纯Swift，只依赖于SwiftNIO。这意味着它可以在任何Swift项目中使用HTTP框架 - 甚至是没使用Vapor的项目。
+HTTP包是轻量级的，纯Swift实现，并且只依赖于 SwiftNIO 。这意味着它可以在任何Swift项目中使用HTTP框架 - 甚至是没使用Vapor的项目。
 
 要将其包含到你的包中, 添加以下代码到 `Package.swift` 文件里。
 

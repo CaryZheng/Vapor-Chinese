@@ -1,6 +1,6 @@
 # Using HTTPServer
 
-HTTP 服务器使用 [`HTTPResponses`](https://api.vapor.codes/http/latest/HTTP/Structs/HTTPResponse.html) 响应 [`HTTPRequests`](https://api.vapor.codes/http/latest/HTTP/Structs/HTTPRequest.html)。 [`HTTPServer`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPServer.html) 类型为Vapor更高级别的server提供动力。小指南将向您展示如何手动设置您自己的HTTP服务器。
+HTTP 服务器使用 [`HTTPResponses`](https://api.vapor.codes/http/latest/HTTP/Structs/HTTPResponse.html) 响应 [`HTTPRequests`](https://api.vapor.codes/http/latest/HTTP/Structs/HTTPRequest.html)。 [`HTTPServer`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPServer.html) 类型为Vapor更高级别的server提供动力。本篇精简指南将向您展示如何手动设置您自己的HTTP服务器。
 
 > 提示
 >
@@ -50,7 +50,7 @@ let server = try HTTPServer.start(
 try server.onClose.wait()
 ```
 
-静态方法 [`start(...)`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPServer.html#/s:4HTTP10HTTPServerC5startXeXeFZ) 创建并返回一个新的异步 [`HTTPServer`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPServer.html) 。Future将在服务器成功引导时完成，否则会在出现问题时包生成错误信息。
+静态方法 [`start(...)`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPServer.html#/s:4HTTP10HTTPServerC5startXeXeFZ) 创建并返回一个新的异步 [`HTTPServer`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPServer.html) 。Future将在服务器成功引导时完成，否则会在出现问题时生成错误信息。
 
 一旦future启动完成，我们的服务器就在运行。通过等待服务器的 `onClose` future 完成， 我们可以让我们的应用程序保持活跃状态​​，直到服务器关闭。通常情况下，服务器不会自动关闭--它只会无限期地运行。但是，如果调用了 `server.close()` ，应用程序可以正常退出。
 

@@ -1,6 +1,6 @@
 # Using HTTPClient
 
-HTTP客户端向远程HTTP服务器发送请求，然后生成并返回响应。 HTTP客户端通常只在几秒钟到几分钟内有效，并可能发送一个或多个请求。 [`HTTPClient`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPClient.html) 类型为Vapor高级客户端提供动力。小指南将向您展示如何手动向服务器发送HTTP请求。
+HTTP客户端向远程HTTP服务器发送请求，然后生成并返回响应。 HTTP客户端通常只在几秒钟到几分钟内有效，并可能发送一个或多个请求。 [`HTTPClient`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPClient.html) 类型为Vapor高级客户端提供动力。本篇精简指南将向您展示如何手动向服务器发送HTTP请求。
 
 
 > 提示
