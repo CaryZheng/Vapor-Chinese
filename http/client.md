@@ -1,6 +1,6 @@
 # Using HTTPClient
 
-HTTP客户端向远程HTTP服务器发送请求，然后生成并返回响应。 HTTP客户端通常只能在几分钟到几分钟内激活，并可能发送一个或多个请求。 [`HTTPClient`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPClient.html) 类型是Vapor高级客户端的动力。本小指南将向您展示如何手动向服务器发送HTTP请求。
+HTTP客户端向远程HTTP服务器发送请求，然后生成并返回响应。 HTTP客户端通常只在几秒钟到几分钟内有效，并可能发送一个或多个请求。 [`HTTPClient`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPClient.html) 类型为Vapor高级客户端提供动力。小指南将向您展示如何手动向服务器发送HTTP请求。
 
 
 > 提示
@@ -24,7 +24,7 @@ print(httpRes) // HTTPResponse
 
 > 警告
 >
->    指南假定您位于主线程中。如果你在route（路由）内部，不要使用 `wait()`。参见 [Async &rarr; Overview](../async/overview/#blocking) 以获取更多资料。
+>    指南假定你位于主线程中。如果你在route（路由）内部，不要使用 `wait()`。参见 [Async &rarr; Overview](../async/overview/#blocking) 以获取更多资料。
 
 在我们连接HTTP客户端后，我们可以使用 [`HTTPRequest`](https://api.vapor.codes/http/latest/HTTP/Structs/HTTPRequest.html) 的 [`send(...)`](https://api.vapor.codes/http/latest/HTTP/Classes/HTTPClient.html#/s:4HTTP10HTTPClientC4sendXeXeF) 方法。 这将返回一个  [`HTTPResponse`](https://api.vapor.codes/http/latest/HTTP/Structs/HTTPResponse.html) 其中包含从服务器发回的标头和主体。参见 [HTTP &rarr; Message](message.md) 以获得更多关于HTTP消息的信息。
 
