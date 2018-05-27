@@ -74,7 +74,7 @@ print(futureStatus) // Future<HTTPStatus>
 ```
 这个操作仍然是一个转变,即使我们已经提供了一个可使用的值用来 `transform`.在之前的futures还未完成（或者失败）之前，这个future不会完成。
 
-## Chanining
+## Chaining
 关于futures转化的重要部分是它们可以通过链式调用。这使你可以轻松表达许多转换和子任务。
 让我们修改上面的例子，看看我们如何利用链式。
 
