@@ -34,6 +34,6 @@ let package = Package(
 
 > 警告
 > 
-> 本章可能含有一些 `Vapor特有` 的API，然而大部分通常适用于 `Validation` 模块。访问 [API Docs](https://api.vapor.codes/validation/latest/Validation/index.html) 获得更多 `Vapor特有` API的信息。
+> 本章可能含有一些 `Vapor特有` 的API，然而大部分通常适用于 `Validation` 模块。访问 [API Docs](https://api.vapor.codes/validation/latest/Validation/index.html) 获得更多 `Validation特有` API的信息。
 
 

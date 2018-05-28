@@ -92,7 +92,7 @@ try validations.add(\.email, .email || .nil)
 我们可以使用 `||` 组合两个操作来表达我们想要的验证：如果 email 不为 `nil`，则验证它是否符合邮箱格式。
 
 ## Validate
-让我们用的新知识完成剩下的验证。
+让我们用新知识完成剩下的验证。
 
 ```swift
 extension User: Validatable {
