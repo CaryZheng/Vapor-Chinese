@@ -112,7 +112,7 @@ return req.withConnection(to: .sqlite) { conn in
 
 ### Simply Query
 
-使用 `.simpleQuery(\_:)` 在不绑定任何参数的 SQLite 数据库上执行查询。你发送给 SQLite 的一些查询可能实际上需要你使用 `simpleQuery(\_:)` 方法而不是参数化方法。
+使用 `.simpleQuery(_:)` 在不绑定任何参数的 SQLite 数据库上执行查询。你发送给 SQLite 的一些查询可能实际上需要你使用 `simpleQuery(_:)` 方法而不是参数化方法。
 
 > 注意
 > 
