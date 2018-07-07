@@ -132,8 +132,8 @@
 ## SQLite
 
 * [开始](/sqlite/getting_started.md)
-* [Fluent SQLite](/sqlite/fluent_myesql.md)
-* [SQLite Core](/sqlite/mysql_core.md)
+* [Fluent SQLite](/sqlite/fluent_sqlite.md)
+* [SQLite Core](/sqlite/sqlite_core.md)
 
 ## Template Kit
 
