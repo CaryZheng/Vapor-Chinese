@@ -151,9 +151,9 @@ router.get("users") { req in
 
 # 连接
 
-使用Fluent，您始终可以访问底层数据库驱动程序。使用此底层驱动程序执行查询有时称为“原始查询”
+使用Fluent，您始终可以访问底层数据库驱动程序。使用此底层驱动程序执行查询有时称为“原始查询”。
 
-我们看一下原始查询
+我们看一下原始查询。
 
 ```
 router.get("mysql-version") { req -> Future<String> in
