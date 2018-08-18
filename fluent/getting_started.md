@@ -1,9 +1,9 @@
-# 开始使用 Fluent
+# Getting Started with Fluent 开始使用 Fluent
 
 Fluent ([vapor/fluent](https://github.com/vapor/fluent)) 是为Swift构建的一个类型安全，快速且易于使用的ORM框架。
 它利用了Swift强大的类型系统为构建数据库集成提供了一个优雅的基础。
 
-## 选择一个数据库驱动
+## Choosing a Driver 选择一个数据库驱动
 
 Fluent 只是构建ORM的框架，而不是ORM本身。要开始使用Fluent，请选择下面的其中一种数据库。
 
@@ -16,15 +16,14 @@ Fluent 只是构建ORM的框架，而不是ORM本身。要开始使用Fluent，�
 |MongoDB|fluent-mongo|n/a|`mongo`|Coming soon. Popular NoSQL database.|
 
 > 提示
-> 
->    使用上表中的信息替换下面Xcode代码段中的所有占位符`<＃...＃>`）。
+>
+> 使用上表中的信息替换下面Xcode代码段中的所有占位符`<＃...＃>`）。
 
 你也可以在Github上搜索标签 [`fluent-database`](https://github.com/topics/fluent-database) 以获取官方和第三方Fluent数据库驱动的完整列表。
 
-### 包
+### Package 包
 
 一旦确定了所需的驱动，下一步就是将其作为依赖添加到项目中SPM包清单文件中。
-
 
 ```swift
 // swift-tools-version:4.0
@@ -50,14 +49,13 @@ let package = Package(
 vapor xcode
 ```
 
-## 创建模型
+## Creating a Model 创建模型
 
 现在让我们创建第一个模型。模型表示数据库中的表，它们是与数据交互的主要方法。
 
 每个驱动都提供了便利模型协议（`PostgreSQLModel`，`SQLiteModel`等），扩展了Fluent的基础[`Model`](https://api.vapor.codes/fluent/latest/Fluent/Protocols/Model.html)协议。这些便利类型通过使用ID键和类型的标准值使声明模型更简洁。
 
 使用所选数据库的名称填写下面的Xcode占位符，即`PostgreSQL`。
-
 
 ```swift
 import Fluent<#Database#>
@@ -87,7 +85,7 @@ final class User: <#Database#>Model {
 
 看看[Fluent＆rarr; Model]（models.md），了解有关使用自定义ID类型和键创建模型的更多信息。
 
-##配置数据库
+## Configuring the Database 配置数据库
 
 现在有了模型，就可以配置数据库。这是在[`configure.swift`](../getting-started/structure.md#confureswift)中完成的。
 
@@ -119,7 +117,7 @@ try services.register(Fluent<#Database#>Provider())
 |MySQL|[MySQL &rarr; Getting Started](../mysql/getting-started.md)|[`MySQLDatabase`](https://api.vapor.codes/mysql/latest/MySQL/Classes/MySQLDatabase.html)|
 |SQLite|[SQLite &rarr; Getting Started](../sqlite/getting-started.md)|[`SQLiteDatabase`](https://api.vapor.codes/sqlite/latest/SQLite/Classes/SQLiteDatabase.html)|
 
-## Creating a Migration
+## Creating a Migration 创建数据迁移
 
 如果您的数据库驱动程序使用模式（是一个SQL数据库），则需要为您的新数据库创建一个[`Migration`](https://api.vapor.codes/fluent/latest/Fluent/Protocols/Migration.html) 模型。迁移允许Fluent以可靠，可测试的方式为您的模型创建表。您可以稍后创建其他迁移以更新或删除模型的表，甚至可以操作表中的数据。
 
@@ -132,10 +130,11 @@ import Fluent<#Database#>
 import Vapor
 
 extension User: <#Database#>Migration { }
-``` 
+```
+
 如果您有兴趣了解有关自定义迁移的更多信息，查阅一下 [Fluent &rarr; 迁移](../fluent/migrations.md)。
 
-### Configuring Migrations
+### Configuring Migrations 配置数据迁移
 
 创建migrations后，必须使用[`MigrationConfig`](https://api.vapor.codes/fluent/latest/Fluent/Structs/MigrationConfig.html)将其注册到Fluent。这是在[`configure.swift`](../getting-started/structure.md#confureswift)中完成的。
 
@@ -165,7 +164,7 @@ Migrations complete
 Server starting on http://localhost:8080
 ```
 
-## Performing a Query
+## Performing a Query 执行查询
 
 现在你已在数据库中创建了模型和相应的模式，让我们进行第一次查询。
 
@@ -177,7 +176,7 @@ router.get("users") { req in
 
 如果你运行了app并查询该路由，则应该看到返回一个空数组。现在你只需添加一些用户！祝贺您的第一个Fluent model正常运行。
 
-## Raw Queries
+## Raw Queries 原生查询
 
 使用Fluent，你始终可以访问底层数据库驱动。使用此底层驱动执行查询有时称为“原始查询”。
 
